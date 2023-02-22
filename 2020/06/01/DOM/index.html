@@ -10,6 +10,15 @@
 
     <!--Description-->
     
+        <meta name="description" content="认识DOM
+DOM:Document Object Model”文档对象模型”。
+DOM适用于HTML的应用程序接口API，用来操作标签的。
+
+DOM的作用
+能够改变页面中所有的HTML元素“标签及内容”。
+能够改变页面中所有的HTML属性“标签内的属性”。
+能够改变页面中所有的CSS属性“样式”。">
+    
 
     <!--Author-->
     
@@ -18,7 +27,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Welcome lijinshuai&#39;s Blog"/>
+        <meta property="og:title" content="DOM"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +38,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -43,7 +52,7 @@
 
     <!-- Title -->
     
-    <title>归档 - Welcome lijinshuai&#39;s Blog</title>
+    <title>DOM - Welcome lijinshuai&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -132,9 +141,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -142,214 +149,79 @@
     <div class="logo">
         <a href="/lijinshuai_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">归档</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/3-5%20%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        网络，服务器，IP,请求
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2020/06/01/DOM/">
+                DOM
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-06-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/Javascript/">Javascript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="认识DOM"><a href="#认识DOM" class="headerlink" title="认识DOM"></a>认识DOM</h1><ul>
+<li>DOM:Document Object Model”文档对象模型”。</li>
+<li>DOM适用于HTML的应用程序接口API，用来操作标签的。</li>
+</ul>
+<h1 id="DOM的作用"><a href="#DOM的作用" class="headerlink" title="DOM的作用"></a>DOM的作用</h1><ul>
+<li>能够改变页面中所有的HTML元素“标签及内容”。</li>
+<li>能够改变页面中所有的HTML属性“标签内的属性”。</li>
+<li>能够改变页面中所有的CSS属性“样式”。</li>
+<li>能过对页面中所有的事件作出反应。</li>
+</ul>
+<h1 id="节点的name，type，value"><a href="#节点的name，type，value" class="headerlink" title="节点的name，type，value"></a>节点的name，type，value</h1><ol>
+<li><p>HTML文档中所有的事物都是DOM节点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.1 HTML中所有的元素称为 元素节点</span><br><span class="line">1.2 HTML中所有的属性称为 属性节点</span><br><span class="line">1.3 HTML中所有的文本称为 文本节点</span><br><span class="line">1.4 HTML中所有的注释称为 注释节点</span><br><span class="line">1.5 HTML中的文档本身称为 文档节点（根节点)</span><br><span class="line">1.6 HTML文档中的空格或换行也是节点 文本节点</span><br></pre></td></tr></table></figure></li>
+<li><p>nodeName属性是获取某一个节点的节点名称</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2.1 元素节点的nodeName 和元素名一样(大写)</span><br><span class="line">2.2 属性节点的nodeName 和元素属性名一样</span><br><span class="line">2.3 文本节点的nodeName #text</span><br><span class="line">2.4 注释节点的nodeName #comment</span><br><span class="line">2.5 文档节点的nodeName #document</span><br></pre></td></tr></table></figure></li>
+<li><p>nodeType，获取某个节点的节点新型</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">3.1 元素节点的nodeType node.element.node(大写)</span><br><span class="line">3.2 属性节点的nodeType node.attribute.node(大写)</span><br><span class="line">3.3 文本节点的nodeType node.text.node(大写)</span><br><span class="line">3.4 注释节点的nodeType node.comment.node(大写)</span><br><span class="line">3.5 文档节点的nodeType node.document.node(大写)</span><br><span class="line"></span><br><span class="line">3.6    nodeType == 1  ： 元素节点</span><br><span class="line">扩     nodeType == 2  ： 属性节点</span><br><span class="line">展     nodeType == 3  ： 文本节点</span><br><span class="line">       注释 comments   8</span><br><span class="line">       文档 document   9</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>nodeValue，获取某个节点的节点值，一般用于文本节点和属性节点。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">4.1 对于文本节点的nodeValue 属性包含文本</span><br><span class="line">4.2 对于属性节点nodeValue 属性包含属性值</span><br><span class="line">4.3 nodeValue对于文档及节点和元素节点是不可用的，使用textCotent代替nodeValue来获取元素节点的内容。</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/lijinshuai_blog/tags/JS/">#JS</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/Ajax/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        AJAX,GET,POST
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/Bom/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        BOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/DOM/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        DOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/07/01/cookie%E7%9A%84%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Jul 2020
-        </span>
-        Cookie内存
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        ES6新特性
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/event/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        event对象
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        this,this指向
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/02/01/js%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Feb 2021
-        </span>
-        JS发展史
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/webStorage/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        webStorage存储数据
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        内存管理
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E4%B8%80%E6%AC%A1HTTP%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        HTTP请求响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E4%BD%9C%E7%94%A8%E5%9F%9F,%E4%B8%8A%E4%B8%8B%E6%96%87,%E9%97%AD%E5%8C%85,%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        作用域链、执行上下文、垃圾回收、闭包
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        原型与原型链
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        前后端响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/04/01/%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2/">
-        <span class="archive-date">
-            Apr 2020
-        </span>
-        响应式布局之媒体查询
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        构造函数
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        数据类型转换
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%AD%A3%E5%88%99/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        正则
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        运算符的优先级
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E8%BF%9B%E7%A8%8B,%E7%BA%BF%E7%A8%8B,%E5%90%8C%E6%AD%A5,%E5%BC%82%E6%AD%A5/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        进程 线程 同步 异步
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/%E9%97%AD%E5%8C%85/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        闭包
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

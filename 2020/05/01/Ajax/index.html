@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="一，什么是AJAX？AJAX 是 异步 JavaScript 和 XML，全称(Asynchronous JavaScipt And XML).是一种创建交互式，快速动态网页应用的网页开发技术，无需要重新加载整个网页的情况下，能够更新部分网页的技术。
+
+AJAX是一种交互技术。（客户端和服务器之间的">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="李金帅">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="AJAX,GET,POST"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Welcome lijinshuai&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>AJAX,GET,POST - Welcome lijinshuai&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/lijinshuai_blog/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/tags">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/categories">
+                    类别
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/myjob">
+                    简历
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/lijinshuai_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2020/05/01/Ajax/">
+                AJAX,GET,POST
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/AJAX/">AJAX</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="一，什么是AJAX？"><a href="#一，什么是AJAX？" class="headerlink" title="一，什么是AJAX？"></a>一，什么是AJAX？</h1><p>AJAX 是 异步 JavaScript 和 XML，全称(Asynchronous JavaScipt And XML).<br>是一种创建交互式，快速动态网页应用的网页开发技术，无需要重新加载整个网页的情况下，能够更新部分网页的技术。</p>
+<ul>
+<li>AJAX是一种交互技术。（客户端和服务器之间的交互）</li>
+<li>AJAX天生是异步的，不会阻塞，用户体验好。</li>
+<li>缺点：不能进行回退(不会操作历史记录)。</li>
+<li>AJAX不是新的编程语言，而是一种使用现有的标准的新方法</li>
+</ul>
+<h3 id="AJAX基于现有的Internet标准"><a href="#AJAX基于现有的Internet标准" class="headerlink" title="AJAX基于现有的Internet标准"></a>AJAX基于现有的Internet标准</h3><ul>
+<li>XMLHttpRequest对象（异步与服务器交换数据）</li>
+<li>JS/DOM （信息显示/交互） CSS（给数据定义样式）  XML&amp;JSON（作为转换数据的方式）</li>
+</ul>
+<p>XML:可扩展的标记语言，可以认为HTML是XML的子集（不准确）。<br>xml主要用来传输数据的，是一种数据交换格式，原来webService中使用，后面再介绍一种数据交换格式JSON。主要用来渲染数据</p>
+<h1 id="HTTP请求与相应的组成："><a href="#HTTP请求与相应的组成：" class="headerlink" title="HTTP请求与相应的组成："></a>HTTP请求与相应的组成：</h1><ul>
+<li>RequestHeaders：HTTP请求头信息，用来描述一些元数据</li>
+<li>HTTP请求体。也就是请求的正文</li>
+<li>ResponseHeaders：HTTP响应头信息，用来描述一些元数据</li>
+<li>HTTP响应体，也就是响应的正文</li>
+</ul>
+<h1 id="HHTP请求方法："><a href="#HHTP请求方法：" class="headerlink" title="HHTP请求方法："></a>HHTP请求方法：</h1><p>   <strong>GET</strong>：常用语向服务器查询某些信息，必要时，可以将查询字符串参数追加到UTL末尾，以便将信息发送给服务器。<br>   <strong>POST</strong>：常用于指定资源提交数据进行处理请求(例如提交表单或者上传文件)，数据被包含在请求体中(body体)。请求可能会导致新的资源的建立或已有的资源的修改。</p>
+<h1 id="响应状态码："><a href="#响应状态码：" class="headerlink" title="响应状态码："></a>响应状态码：</h1><ul>
+<li>它以“清晰明确”的语言告诉客户端(浏览器)本次请求的处理结果，一般由3位数字代码组成。<h3 id="HTTP状态码："><a href="#HTTP状态码：" class="headerlink" title="HTTP状态码："></a>HTTP状态码：</h3></li>
+<li>1XX 接收信息正在处理</li>
+<li>2XX 正常处理完毕 （200 ok请求成功）</li>
+<li>3XX 附加操作  （301 永久重定向。 302 临时重定向）</li>
+<li>4XX 无法处理  （400 语法错误。 401 未认证。 403 禁止访问。404 资源未找到）</li>
+<li>5XX 请求出错  （500 服务器故障。503服务器繁忙）</li>
+</ul>
+<h1 id="请求的过程"><a href="#请求的过程" class="headerlink" title="请求的过程"></a>请求的过程</h1><ol>
+<li>web ：页面的内容及数据展示</li>
+<li>数据库 ：管理的数据仓库“管理大量的数据”</li>
+<li>nodeJS：后端服务器，向前端提供需要显示在网页内容的数据</li>
+</ol>
+<h4 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h4><pre><code>- 前端 : 没办法和数据库直接通信，前端发起请求
+- 后端 ：请求来到后端的程序文件中，通过后端的逻辑处理去到数据库”操作数据库，获取操作结果“
+- 数据库 ： 数据库返回操作的结果，把结果响应给前端进行展示
+</code></pre>
+<h1 id="AJAX技术"><a href="#AJAX技术" class="headerlink" title="AJAX技术"></a>AJAX技术</h1><ul>
+<li>Ajax即 Asynchronous Javascript And XML(异步JavaScript 和 XML)，是指一种创建交互式，快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。</li>
+<li>通过与后台与服务器进行少量数据交换，Ajax可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</li>
+<li>局部刷新技术：部分网页内容进行刷新(例如:下拉刷新列表，上拉加载更多列表，用户名是否被注册，地图“放大局部时加载数据”，等……)，不用刷新整个网页</li>
+<li>异步：Ajax在http响应没有结束的时候，可以继续进行后续操作，从而提高用户体验。</li>
+</ul>
+<h1 id="KOA框架搭建后端环境"><a href="#KOA框架搭建后端环境" class="headerlink" title="KOA框架搭建后端环境"></a>KOA框架搭建后端环境</h1><p>原因：前端不能直接操作数据库，得通过先访问后端，通过后端操作数据库 </p>
+<p>选择使用nodeJS作为后端环境，因为nodeJS的底层语言也是JS“使用方便，易懂”</p>
+<p>Ajax主要是是前后端进行通信交互的技术，先不涉及数据库</p>
+<p>KOA：基于Node.js平台的下一代web框架“利用koa可以快速搭建一个web后台环境”</p>
+<p>koa环境搭建：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1. 安装Node.js  ,10以上的版本就行</span><br><span class="line">2. 安装脚手架：npm i -g koa-generator    </span><br><span class="line">3. 安装成功后输入命令 koa2 qqsports    (koa2是koa第2版本，qqsports是文件名)，创建一个项目文件夹(创建一些初始的代码)</span><br><span class="line">4. 输入命令 cd qqsports   进入文件夹</span><br><span class="line">5. 输入命令 npm i  安装依赖</span><br><span class="line">6. 输入命令  npm run dev  来启动koa框架</span><br><span class="line">7. 打开浏览器再地址栏输入  localhost:3000  （页面出现hello koa2，说明运行成功）</span><br><span class="line">8. 走到这一步说明我们已经拥有了一个后端环境，端口号是localhost ，域名是3000   </span><br><span class="line">9. &quot;http://localhost:3000&quot; 访问koa2应用</span><br><span class="line">10. 访问资源：在public目录下有3个文件夹(是脚手架自己创建的)，可以随意的在此目录下放资源，我们可以通过我们的url访问到。</span><br><span class="line">	例如：在public文件的image文件中放入一张图片，在地址栏“localhost:3000/images/图片名“，查看图片。</span><br><span class="line">		 在public文件内添加一个html文件在地址栏”localhost:3000/文件名”，运行文件。</span><br></pre></td></tr></table></figure>
+
+<h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><p>概念：如何定义应用的端口及如何响应客户端的请求“也就是说我们浏览器发起一个请求到我们的服务器上面，其实呢就是先要保证有一个请求地址也就是我们的url，而这个url也就是路由,在koa框架中路由系统已经被搭建好在文件的routes文件中”</p>
+<p>总结：<br>    KOA框架：快速搭建一个后端环境，这样后端可以编写相关代码，前端也能发起各种http请求。<br>    KOA框架是基于Node.js开发的，而Node.js只是作为后端执行环境使用“Node.js后端语言是JS”</p>
+<h1 id="Ajax的基本框架"><a href="#Ajax的基本框架" class="headerlink" title="Ajax的基本框架"></a>Ajax的基本框架</h1><h3 id="创建XMLHttpRequest"><a href="#创建XMLHttpRequest" class="headerlink" title="创建XMLHttpRequest"></a>创建XMLHttpRequest</h3><p>Ajax通过原生的XMLHttpRequest对象发出HTTP请求，得到服务器返回的数据后，再进行处理。XMLHTTPRequest对象是Ajax的主要接口，用于浏览器与服务器之间的通信</p>
+<ol>
+<li><p>创建,实例化xhr对象<br> var xhr = new XMLHTTPRequest();</p>
+</li>
+<li><p>xhr实例下的load事件，用来监听请求是否已经成功完成<br> xhr. onload =  function( ){ console.log(‘请求已经完成’) ；}</p>
+</li>
+<li><p>发出HTTP请求<br> xhr实例创建成功后，使用open() 和 send() 方法发出HTTP请求<br> open:连接 ，参数1请求的方式，参数2请求的url，参数3是否异步true异步false异步“可省略默认值为true”<br> send:发送数据<br> xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://localhost/list&#39;,&#39;true&#39;">http://localhost/list&#39;,&#39;true&#39;</a>)<br> xhr.send()</p>
+</li>
+<li><p>去routes的index.js文件中编写一下list路由<br> // 根据上面变写<br> // ctx 是表示执行上下文，它包含请求对象和响应对象<br> router.get(‘/list’, async (ctx, next)=&gt;{</p>
+<pre><code> //随便返回一个字符串测试
+
+   ctx.body = &quot;list Data&quot;;
+</code></pre>
+<p>   })</p>
+</li>
+<li><p>刷新浏览器，在控制台查看请求状态“输出结果，查看list状态码，response响应的结果”</p>
+</li>
+<li><p>发送POST请求，发送请求方式相同把GET改为POST</p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>基本框架，步骤1：创建xhr对象 “所有的Ajax操作都是通过这个实例来完成的”<br>基本框架，步骤2：监听请求是否完成 “onload触发代表请求完成，可以在事件函数中操作，比如页面的渲染工作”<br>基本框架，步骤3：发出HTTP请求  “在浏览器端如何发送一个HTTP请求访问指定的服务端，通过xhr的open方法连接 和 send方法发送”</p>
+<h1 id="请求操作"><a href="#请求操作" class="headerlink" title="请求操作"></a>请求操作</h1><h3 id="GET发送数据"><a href="#GET发送数据" class="headerlink" title="GET发送数据"></a>GET发送数据</h3><p>原理：GET请求通过哦查询字符串参数的方式把请求体内容传输给后端，要求通过附加url后面进行传输。<br>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://localhost/list?type=phone&amp;count=20&#39;,true">http://localhost/list?type=phone&amp;count=20&#39;,true</a>)<br>xhr.send();<br>演示：<br>html文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// GET请求传输数据</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onload = function()&#123;</span><br><span class="line">        console.log(&quot;请求完成&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(&#x27;GET&#x27;,&#x27;/list?type=phone&amp;count=20&#x27;,true);</span><br><span class="line">    xhr.send();</span><br></pre></td></tr></table></figure>
+
+<p>接口文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">router.get(&#x27;/list&#x27;, async (ctx, next)=&gt;&#123;</span><br><span class="line">	// 接收get传输的数据</span><br><span class="line">  	// 通过ctx下面有一个request对象的query</span><br><span class="line">  		console.log(ctx.request.query);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220709101040068.png"></p>
+<p>通过命令行窗口，koa框架会把发过来的查询字符换进行解析，解析为对象的格式<br><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220709101240646.png"></p>
+<h3 id="POST发送数据"><a href="#POST发送数据" class="headerlink" title="POST发送数据"></a>POST发送数据</h3><p>POST请求默认通过纯文本的方式把请求体内容传给后端，要求通过send()方法参数进行传输<br>xhr.open(‘POST’,’<a target="_blank" rel="noopener" href="http://localhost/register&#39;,true">http://localhost/register&#39;,true</a>);<br>xhr.send(‘James’); //方法内是纯文本数据<br>但是前后端交互不建议使用纯文本，还是推荐使用key，value组合的方式发送数据。<br>POST如果想发送key，value组合的数据可以通过 “名称/值”对的方式吧请求体内容穿给后端，要求通过    setRequestHeader()方法进行设置<br>    xhr.open(‘OPST’,’<a target="_blank" rel="noopener" href="http://localhost/register&#39;,true">http://localhost/register&#39;,true</a>);<br>    xhr.setRequestHeader(‘Content-Type’,’application/x-www-form-urlencoded’);<br>    xhr.send(‘username=James&amp;password=123456’);<br>演示：<br>html文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// POST请求传输数据</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onload = function()&#123;</span><br><span class="line">        console.log(&quot;请求完成&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(&#x27;POST&#x27;,&#x27;/list2&#x27;,true);</span><br><span class="line">    xhr.setRequestHeader(&#x27;Content-Type&#x27;,&#x27;application/x-www-form-urlencoded&#x27;)</span><br><span class="line">    xhr.send(&#x27;username=James&amp;password=123456&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>接口文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// post请求</span><br><span class="line">	router.post(&#x27;/list2&#x27;, async (ctx, next)=&gt;&#123;</span><br><span class="line">  		ctx.body = &quot;list2 Data&quot;;</span><br><span class="line">  		// 接收post传输的数据</span><br><span class="line">  		// 通过ctx下面有一个request对象的body</span><br><span class="line">  		console.log(ctx.request.body);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器发送请求，数据通过请求体查看内容，在终端中查看返回的数据。</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>GET发送数据：url?后面，通过查询字符串参数形式发送。<br>POST发送数据：send()方法参数，类型为纯文本，转换为“名称/值”对 或 文件 或 JSON等。</p>
+<h1 id="Ajax的响应操作"><a href="#Ajax的响应操作" class="headerlink" title="Ajax的响应操作"></a>Ajax的响应操作</h1><p>status是XMLHttpRequest对象的一个属性，表示响应的HTTP状态码</p>
+<p>responseText响应字符串<br>返回从服务器接收到的字符产，该属性为只读。只有HTTP请求完成接收后，该属性才会包含完整的数据。<br>例如：<br>    if(xhr.status == 200){<br>            console.log(xhr.responseText)<br>    }<br>演示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 请求的响应判断</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onload = function()&#123;</span><br><span class="line">        if(xhr.status == 200)&#123;</span><br><span class="line">            console.log(xhr.responseText);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(&#x27;GET&#x27;,&#x27;/list&#x27;,true);</span><br><span class="line">    xhr.send(&#x27;username=James&amp;password=123456&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="responseXML响应XML文档"><a href="#responseXML响应XML文档" class="headerlink" title="responseXML响应XML文档"></a>responseXML响应XML文档</h3><p>概念：返回从服务器接收到的XML文档对象，该属性为只读</p>
+<p>文档：和html相似都是标签组成的数据，XML标签是自定义的，复杂，建议使用JSON</p>
+<p>l过程如图所示：</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220709110833909.png"></p>
+<h3 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h3><p>响应数据：类型可以是字符串，XML文档，二进制数据，JSON数据</p>
+<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>概念：JSON（JavaScirpt Object Notation）是一种轻量级的数据交换格式。它使人们容易的进行阅读和编写。同时也方便了机器的解析和生成。</p>
+<p>格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 单租JSON</span><br><span class="line">&#123;&quot;username&quot;:&quot;James&quot;,&quot;password&quot;:&#x27;123456&#x27;&#125;</span><br><span class="line">// 多组JSON</span><br><span class="line">[</span><br><span class="line">	&#123;&quot;username&quot;:&quot;James&quot;,&quot;password&quot;:&#x27;123456&#x27;&#125;,</span><br><span class="line">	&#123;&quot;username&quot;:&quot;Hero&quot;,&quot;password&quot;:&#x27;111111&#x27;&#125;,</span><br><span class="line">	&#123;&quot;username&quot;:&quot;LISA&quot;,&quot;password&quot;:&#x27;666666&#x27;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="JSON规范"><a href="#JSON规范" class="headerlink" title="JSON规范"></a>JSON规范</h3><ul>
+<li>key属性和字符串类型值，必须使用双引号。</li>
+<li>指的类型范围有限：string，number，object，array，boolean，null ，其他类型不支持。</li>
+<li>最后一组数据，不能够添加逗号结束。</li>
+</ul>
+<p>演示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// JSON格式数据</span><br><span class="line"> var json = &#123;</span><br><span class="line">     &quot;username&quot;: &quot;James&quot;,</span><br><span class="line">     &quot;foo&quot;: null</span><br><span class="line"> &#125;;</span><br><span class="line"> // 作为对象，数据很容易拿到数据，但是在后端往浏览器响应数据的时候是字符串类型的JSON，所以需要解析JSON字符串</span><br><span class="line"> console.log(json.username);</span><br><span class="line"></span><br><span class="line"> // 拿到的JSON字符串长这样，没办法通过属性获取到值</span><br><span class="line"> var json = &#x27;&#123;&quot;username&quot;:&quot;James&quot;&#125;&#x27;;</span><br><span class="line"> // 所以要利用JSON的parse方法解析JSON字符串</span><br><span class="line"> json = JSON.parse(json);</span><br><span class="line"> console.log(json.username);</span><br><span class="line"> </span><br><span class="line"> // 如果是多组JSON操作，字符串编辑麻烦可以使用转换</span><br><span class="line"> var json = [</span><br><span class="line">     &#123; &quot;username&quot;: &quot;James&quot;, &quot;password&quot;: &#x27;123456&#x27; &#125;,</span><br><span class="line">     &#123; &quot;username&quot;: &quot;Hero&quot;, &quot;password&quot;: &#x27;111111&#x27; &#125;,</span><br><span class="line">     &#123; &quot;username&quot;: &quot;LISA&quot;, &quot;password&quot;: &#x27;666666&#x27; &#125;</span><br><span class="line"> ];</span><br><span class="line"> // 把引用类型的数据转换为JSON字符串</span><br><span class="line"> // stringify()方法和parse()方法，操作相反。</span><br><span class="line"> json = JSON.stringify(json); </span><br><span class="line"> json = JSON.parse(json);</span><br><span class="line"> console.log(json[2].username);</span><br></pre></td></tr></table></figure>
+
+<p>JSON数据发送请求演示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 使用JSON数据，请求传输数据</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onload = function()&#123;</span><br><span class="line">        if(xhr.status == 200)&#123;</span><br><span class="line">            // 1.输出查看，控制台返回的数据</span><br><span class="line">            // console.log(xhr.responseText);</span><br><span class="line"></span><br><span class="line">            // 2.根据数据获取数据</span><br><span class="line">            var data = JSON.parse(xhr.responseText);</span><br><span class="line">            console.log(data.list[0].username);</span><br><span class="line">            console.log(data.list[0].age);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(&#x27;GET&#x27;,&#x27;/list&#x27;,true);</span><br><span class="line">    xhr.send();</span><br></pre></td></tr></table></figure>
+
+<p>接口文档：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">router.get(&#x27;/list&#x27;, async (ctx, next)=&gt;&#123;</span><br><span class="line">  ctx.body = &quot;list Data&quot;;</span><br><span class="line"></span><br><span class="line">  // 接收get传输的数据</span><br><span class="line">  // 通过ctx下面有一个request对象的query</span><br><span class="line">  // console.log(ctx.request.query);</span><br><span class="line"></span><br><span class="line">  // 在koa框架中，只要使用&#123;&#125;就可以访问JSON格式数据了“koa自动进行了转换”</span><br><span class="line">  ctx.body = &#123;</span><br><span class="line">    errcode:0,</span><br><span class="line">    errmsg:&#x27;ok&#x27;,</span><br><span class="line">    list:[</span><br><span class="line">      &#123;&quot;username&quot;: &quot;James&quot;, &quot;age&quot;: &#x27;30&#x27;,gender:&#x27;男&#x27;&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结：-2"><a href="#总结：-2" class="headerlink" title="总结："></a>总结：</h3><p>JSON：一种轻量级的数据交换格式，比XML要简单，灵活，高效。<br>JSON规范：双引号，类型限制，逗号<br>JSON方法：JSON.stringify( )   JSON.parse( )    前后端数据通信的便捷转换神器。</p>
+<h1 id="响应JSON数据到页面"><a href="#响应JSON数据到页面" class="headerlink" title="响应JSON数据到页面"></a>响应JSON数据到页面</h1><h2 id="1-DOM方式"><a href="#1-DOM方式" class="headerlink" title="1.DOM方式"></a>1.DOM方式</h2><p>DOM是HTML文档的编程接口。DOM将文档解析为一个由节点和对象组成的结构集合，也叫DOM树。简言之它会将web页面和脚本或程序语言连接起来。<br>操作语法：节点的操作<br>演示：<br>html文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;table border=&quot;1&quot;&gt;</span><br><span class="line">        &lt;thead&gt;</span><br><span class="line">            &lt;tr&gt;</span><br><span class="line">                &lt;th&gt;姓名&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;年龄&lt;/th&gt;</span><br><span class="line">                &lt;th&gt;性别&lt;/th&gt;</span><br><span class="line">            &lt;/tr&gt;</span><br><span class="line">        &lt;/thead&gt;</span><br><span class="line">        &lt;tbody&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/tbody&gt;</span><br><span class="line">    &lt;/table&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 响应数据到页面</span><br><span class="line">    // 方式一：DOM</span><br><span class="line">    var tbody = document.querySelector(&#x27;tbody&#x27;);</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onload = function()&#123;</span><br><span class="line">        if(xhr.status == 200)&#123;</span><br><span class="line">            // 拿到数据进行解析</span><br><span class="line">            var data = JSON.parse(xhr.responseText);</span><br><span class="line">            // 遍历数据数组</span><br><span class="line">            for(var i = 0;i&lt;data.list.length;i++)&#123;</span><br><span class="line">                var tr = document.createElement(&#x27;tr&#x27;);</span><br><span class="line">                // 遍历数组中的对象</span><br><span class="line">                for(var key in data.list[i])&#123;</span><br><span class="line">                    var td = document.createElement(&#x27;td&#x27;);</span><br><span class="line">                    td.innerHTML = data.list[i][key];</span><br><span class="line">                    tr.append(td);</span><br><span class="line">                &#125;</span><br><span class="line">                tbody.append(tr);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(&#x27;GET&#x27;,&#x27;/list&#x27;,true);</span><br><span class="line">    xhr.send();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>接口文件：随意的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">router.get(&#x27;/list&#x27;, async (ctx, next)=&gt;&#123;</span><br><span class="line">  ctx.body = &quot;list Data&quot;;</span><br><span class="line"></span><br><span class="line">  // 接收get传输的数据</span><br><span class="line">  // 通过ctx下面有一个request对象的query</span><br><span class="line">  // console.log(ctx.request.query);</span><br><span class="line"></span><br><span class="line">  // 在koa框架中，只要使用&#123;&#125;就可以访问JSON格式数据了“koa自动进行了转换”</span><br><span class="line">  ctx.body = &#123;</span><br><span class="line">    errcode:0,</span><br><span class="line">    errmsg:&#x27;ok&#x27;,</span><br><span class="line">    list:[</span><br><span class="line">      &#123;&quot;username&quot;: &quot;James&quot;, &quot;age&quot;: &#x27;30&#x27;,gender:&#x27;男&#x27;&#125;,</span><br><span class="line">      &#123;&quot;username&quot;: &quot;LASA&quot;, &quot;age&quot;: &#x27;20&#x27;,gender:&#x27;女&#x27;&#125;,</span><br><span class="line">      &#123;&quot;username&quot;: &quot;TOM&quot;, &quot;age&quot;: &#x27;28&#x27;,gender:&#x27;男&#x27;&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="2-模板拼接字符串"><a href="#2-模板拼接字符串" class="headerlink" title="2.模板拼接字符串"></a>2.模板拼接字符串</h2><p>概念：末班字符串使用反引号来代替普通字符串的双引号和单引号，可以使用多行字符串和字符串插值功能，直接在字符串中渲染数据变量，ES6提供的语法。<br>例如：<br>    var username = ‘James’;<br>    var info = ‘Mm name is ${username}’;<br>演示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// 方式二：末班字符串</span><br><span class="line">    var tbody = document.querySelector(&#x27;tbody&#x27;);</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onload = function () &#123;</span><br><span class="line">        if (xhr.status == 200) &#123;</span><br><span class="line">            // 拿到数据进行解析</span><br><span class="line">            var data = JSON.parse(xhr.responseText);</span><br><span class="line">            // 渲染数据</span><br><span class="line">            // tbody.innerHTML = data.list.map((item,i)=&gt;&#123;</span><br><span class="line">            //     return `</span><br><span class="line">            //         &lt;tr&gt;</span><br><span class="line">            //             &lt;td&gt;$&#123;item.username&#125;&lt;/td&gt;</span><br><span class="line">            //             &lt;td&gt;$&#123;item.age&#125;&lt;/td&gt;</span><br><span class="line">            //             &lt;td&gt;$&#123;item.gender&#125;&lt;/td&gt;</span><br><span class="line">            //         &lt;/tr&gt;</span><br><span class="line">            //     `</span><br><span class="line">            // &#125;).join(&#x27; &#x27;);</span><br><span class="line">            for (var i = 0; i &lt; data.list.length; i++) &#123;</span><br><span class="line">                tbody.innerHTML += `</span><br><span class="line">                    &lt;tr&gt;</span><br><span class="line">                        &lt;td&gt;$&#123;data.list[i].username&#125;&lt;/td&gt;</span><br><span class="line">                        &lt;td&gt;$&#123;data.list[i].age&#125;&lt;/td&gt;</span><br><span class="line">                        &lt;td&gt;$&#123;data.list[i].gender&#125;&lt;/td&gt;</span><br><span class="line">                    &lt;/tr&gt;</span><br><span class="line">                `</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(&#x27;GET&#x27;, &#x27;/list&#x27;, true);</span><br><span class="line">    xhr.send();</span><br></pre></td></tr></table></figure>
+<p>注意：这种方式渲染，比较繁琐，因为逻辑代码和视图层混合在一起使用了，最好把逻辑代码和视图层分离写法。</p>
+<h2 id="3-前端模板引擎的使用"><a href="#3-前端模板引擎的使用" class="headerlink" title="3.前端模板引擎的使用"></a>3.前端模板引擎的使用</h2><p>概念：模板引擎可以让(网站)程序实现界面与数据分离，业务代码与逻辑代码的分离，提升开发效率，良好的设计也提高了代码的复用性。<br>网站资源：art-template ，mustache ，ejs ，Handlebar.js , jQuery tmpl  ……<br>** art-template 模板引擎使用 **<br>1.下载模板引擎js文件放置到项目<br><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220709151406895.png"><br>2.在html文件内引入JS文件<br>3.改写JS代码<br>演示：<br>3.1 添加模板引擎代码块</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在js上方添加莫版块： id名随意。 type:是固定的表示使用自定义模板--&gt;</span><br><span class="line">&lt;script  id = &quot;tpl-tibody&quot;  type = &quot;text/html&quot; &gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>3.2 js文件的语法使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 方式三：使用模板引擎</span><br><span class="line">  var tbody = document.querySelector(&#x27;tbody&#x27;);</span><br><span class="line">  var xhr = new XMLHttpRequest();</span><br><span class="line">  xhr.onload = function () &#123;</span><br><span class="line">      if (xhr.status == 200) &#123;</span><br><span class="line">          // 拿到数据进行解析</span><br><span class="line">          var data = JSON.parse(xhr.responseText);</span><br><span class="line">          // 根据模板名称渲染模板</span><br><span class="line">          // 参数1:模板引擎的id名。参数2数据名</span><br><span class="line">          tbody.innerHTML = template(&#x27;tpl-tibody&#x27;, data);</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  xhr.open(&#x27;GET&#x27;, &#x27;/list&#x27;, true);</span><br><span class="line">  xhr.send();</span><br></pre></td></tr></table></figure>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220709152314909.png"><br>3.3 模板中数据渲染逻辑处理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script id=&quot;tpl-tibody&quot; type=&quot;text/html&quot;&gt;</span><br><span class="line">    &#123;&#123; each list&#125;&#125;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;&#123;&#123; $value.username &#125;&#125;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&#123;&#123; $value.age &#125;&#125;&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;&#123;&#123; $value.gender &#125;&#125;&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;</span><br><span class="line">    &lt;!-- 代表结束，否则会报错 --&gt;</span><br><span class="line">    &#123;&#123; /each&#125;&#125; </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><p>如何把JSON数据渲染到页面：DOM操作，拼接模板字符串，前端模板引擎，或后面学习的vue，React等框架。</p>
+<h1 id="发送JSON数据"><a href="#发送JSON数据" class="headerlink" title="发送JSON数据"></a>发送JSON数据</h1><p>概念：GET请求不能发送JSON数据，POST请求可以发送JSON数据<br>POST通过修改请求头信息，进行JSON数据发送，通过setRequestHeader( )方法进行设置。<br>例如：<br>    xhr.open(‘POST’,’<a target="_blank" rel="noopener" href="http://localhost/list2&#39;,true">http://localhost/list2&#39;,true</a>);<br>    xhr.serRequestHeader(‘Content-Type’,’application/json’);<br>    xhr.send(JSON.stringify({“username”:”James”,”age:30}));<br>演示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// post请求发送JSON数据</span><br><span class="line">var xhr = new XMLHttpRequest();</span><br><span class="line">xhr.onload = function () &#123;</span><br><span class="line">    if (xhr.status == 200) &#123;</span><br><span class="line">        console.log(&quot;请求发送&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">xhr.open(&#x27;POST&#x27;, &#x27;/list2&#x27;, true);</span><br><span class="line">xhr.setRequestHeader(&#x27;Conten-Type&#x27;,&#x27;application/json&#x27;);</span><br><span class="line">xhr.send(JSON.stringify(&#123;&quot;username&quot;:&quot;LISA&quot;,&quot;agqe&quot;:&quot;30&quot;&#125;));</span><br></pre></td></tr></table></figure>
+<p>接口文件不变</p>
+<h3 id="总结：-3"><a href="#总结：-3" class="headerlink" title="总结："></a>总结：</h3><p>发送JSON数据：保证了前后端数据格式的统一，方便其前后端操作，并且可以发送更加复杂的数据结构给后端。</p>
+<h1 id="API接口文档"><a href="#API接口文档" class="headerlink" title="API接口文档"></a>API接口文档</h1><h3 id="什么是接口文档？"><a href="#什么是接口文档？" class="headerlink" title="什么是接口文档？"></a>什么是接口文档？</h3><p>在项目开发中，web项目的前后端是分离开发的。应用程序的开发，需要由前后端工程师共同定义跌口，编写接口文档，之后大家根据这个接口文档进行开发，到项目结束前都要一直维护。</p>
+<h3 id="编写接口文档"><a href="#编写接口文档" class="headerlink" title="编写接口文档"></a>编写接口文档</h3><p>接口文档大概需要编写内容为：接口说明，请求方式，请求URL，请求参数，返回参数等<br>例如：<br><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/liveplayer/studio-api.html">https://developers.weixin.qq.com/miniprogram/dev/framework/liveplayer/studio-api.html</a></p>
+<h1 id="案例：初始化渲染页面"><a href="#案例：初始化渲染页面" class="headerlink" title="案例：初始化渲染页面"></a>案例：初始化渲染页面</h1><ol>
+<li><p>体育新闻页进行复制。</p>
+</li>
+<li><p>删减原来页面内容。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;header id=&quot;sports-header&quot;&gt;</span><br><span class="line">        腾讯 | 体育</span><br><span class="line">    &lt;/header&gt;</span><br><span class="line">    &lt;div id=&quot;loadingDown&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;main id=&quot;sports-main&quot;&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;ul class=&quot;sports-list&quot;&gt;</span><br><span class="line">                &lt;!-- 待渲染列表 --&gt;</span><br><span class="line">                &lt;!-- &lt;li&gt;</span><br><span class="line">                    &lt;div class=&quot;sports-list-text&quot;&gt;</span><br><span class="line">                        &lt;p&gt;詹姆斯一分半钟拿下6分1盖帽 这就是联盟第一人的水准&lt;/p&gt;</span><br><span class="line">                        &lt;p&gt;&lt;span&gt;50评&lt;/span&gt;&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;sports-list-img&quot;&gt;</span><br><span class="line">                        &lt;img src=&quot;./images/James1.webp&quot; alt=&quot;&quot;&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                &lt;/li&gt; --&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">            &lt;div id=&quot;loadingUp&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div id=&quot;loading&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/main&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>保留模板，页面与逻辑分离( 可用其他渲染方式 )。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;./javascripts/template-web.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+<li><p>根据API接口文档编辑代码(前后端同时编写)。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var sportsList = document.querySelector(&#x27;.sports-list&#x27;);</span><br><span class="line">    // 创建对象</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    // 添加onload事件，监听请求是否完成，触发则完成</span><br><span class="line">    xhr.onload = function () &#123;</span><br><span class="line">        // 判断响应的HTTP状态码 是否为200</span><br><span class="line">        if (xhr.status == 200) &#123;</span><br><span class="line">            // 获取响应字符串</span><br><span class="line">            console.log(xhr.responseText);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // 发送POST请求，路径为list3，异步的</span><br><span class="line">    xhr.open(&#x27;POST&#x27;,&#x27;/list3&#x27;,true);</span><br><span class="line">    // 请求参数是一个json格式的，需要设置Conten-Type</span><br><span class="line">    xhr.setRequestHeader(&#x27;Conten-Type&#x27;,&#x27;application/json&#x27;);</span><br><span class="line">    // 发送数据把数据转换为JSON字符串</span><br><span class="line">    xhr.send(JSON.stringify(&#123;&quot;page&quot;:0,&quot;count&quot;:10&#125;));</span><br></pre></td></tr></table></figure></li>
+<li><p>刷新浏览器，查看控制台状态，返回404“ 没有响应内容”，可以在终端查看返回的数据</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220711115412652.png"></p>
+</li>
+<li><p>编写后端内容（错误码）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">router.post(&#x27;/list3&#x27;, async (ctx,next)=&gt;&#123;</span><br><span class="line">  // 编辑错误信息,参数集合</span><br><span class="line">  var args = [</span><br><span class="line">    &#123; field:&#x27;page&#x27;,type:&#x27;number&#x27;&#125;,</span><br><span class="line">    &#123; field:&#x27;count&#x27;,type:&#x27;number&#x27;&#125;</span><br><span class="line">  ];</span><br><span class="line">  var body = ctx.request.body;</span><br><span class="line">  for(var i = 0;i&lt;args.length;i++)&#123;</span><br><span class="line">    var item = args[i];</span><br><span class="line">    // Object.keys获取body的对象的，includes判断是否包含指定的字符串</span><br><span class="line">    // ！取反</span><br><span class="line">    if(!Object.keys(body).includes(item.field))&#123;</span><br><span class="line">      ctx.body = &#123;</span><br><span class="line">        errcode : -1,</span><br><span class="line">        errmsg:&#x27;参数个数错误&#x27;</span><br><span class="line">      &#125;;</span><br><span class="line">      return;</span><br><span class="line">    &#125;</span><br><span class="line">    else&#123;</span><br><span class="line">      // 判断参数类型</span><br><span class="line">      if( typeof body[item.field] != item.type)&#123;</span><br><span class="line">        ctx.body = &#123;</span><br><span class="line">          errcode : -2,</span><br><span class="line">          errmsg:&#x27;参数类型错误&#x27;</span><br><span class="line">        &#125;;</span><br><span class="line">        return;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  ctx.body = &quot;ok&quot;;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<li><p>使用json文件渲染数据</p>
+<p>新建data文件夹，把 list.json文件放进来 （注意：这里未操作数据库，json文件内为假数据，写死的数据）</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220711161138863.png"></p>
+<p><strong>响应json文件内的数据</strong></p>
+<ul>
+<li><p>先在接口文件中的顶部定义</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// node.js 提供的内置模块fs，可以读取文件</span><br><span class="line"></span><br><span class="line">const fs = require(&#x27;fs&#x27;)</span><br></pre></td></tr></table></figure></li>
+<li><p>后端获取数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> // ctx.body = &quot;ok&quot;;</span><br><span class="line">// 字符串类型的数据</span><br><span class="line"> var data = fs.readFileSync(&#x27;./data/list.json&#x27;); //路径都是相对于根路径查找</span><br><span class="line"> // 转换为数据类型的</span><br><span class="line"> data = JSON.parse(data);</span><br><span class="line"> var list = data.splice(body.page * body.count , body.count);</span><br><span class="line">     </span><br><span class="line"> ctx.body = &#123;</span><br><span class="line">   errcode : -0,</span><br><span class="line">   errmsg:&#x27;ok&#x27;,</span><br><span class="line">   list</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>刷新浏览器，工具栏查看数据</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220711163127669.png"></p>
+</li>
+<li><p>拿到数据后就渲染到前台</p>
+<p>1.1 先写引擎模板</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script id=&quot;tpl-sportsList&quot; type=&quot;text/html&quot;&gt;</span><br><span class="line">    &#123;&#123; each list &#125;&#125;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">        &lt;div class=&quot;sports-list-text&quot;&gt;</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">                &#123;&#123; $value.title &#125;&#125;</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">                &lt;span&gt;&#123;&#123; $value.comment &#125;&#125;评&lt;/span&gt;</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;sports-list-img&quot;&gt;</span><br><span class="line">            &lt;img src=&quot;&#123;&#123; $value.img &#125;&#125;&quot; alt=&quot;&quot;&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &#123;&#123; /each &#125;&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>1.2 渲染数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 添加onload事件，监听请求是否完成，触发则完成</span><br><span class="line">    xhr.onload = function () &#123;</span><br><span class="line">        // 判断响应的HTTP状态码 是否为200</span><br><span class="line">        if (xhr.status == 200) &#123;</span><br><span class="line">            // 获取响应字符串</span><br><span class="line">            // console.log(xhr.responseText);</span><br><span class="line">            // 转换为数据格式</span><br><span class="line">            var data = JSON.parse(xhr.responseText)</span><br><span class="line">            // 使用模板引擎渲染数据</span><br><span class="line">            if(data.errcode == 0)&#123;</span><br><span class="line">                sportsList.innerHTML = template(&#x27;tpl-sportsList&#x27;,data);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ol>
+<h1 id="渲染成功-886"><a href="#渲染成功-886" class="headerlink" title="渲染成功 886"></a>渲染成功 886</h1>
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/lijinshuai_blog/tags/AJAX/">#AJAX</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a target="_blank" rel="noopener" href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">this,this指向</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/09/01/webStorage/">webStorage存储数据</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/08/01/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">ES6新特性</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/08/01/event/">event对象</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/AJAX/">AJAX</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/Javascript/">Javascript</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/ES6/">ES6</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/HHTTP/">HHTTP</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/lijinshuai21">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:3211384452@qq.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+
+<script src="/lijinshuai_blog/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

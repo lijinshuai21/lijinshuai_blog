@@ -10,6 +10,15 @@
 
     <!--Description-->
     
+        <meta name="description" content="什么是thisthis:JS的关键词，是一个代词“指代不明”，需要代码执行过程中根据上下文判断this的指向。
+默认情况下
+全局域下 ：this代指window
+对象调用方法中 ： this代指这个对象
+直接调用函数 ： 函数中的this代指window
+
+正常函数的this指向
+全局调用，函数名(">
+    
 
     <!--Author-->
     
@@ -18,7 +27,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Welcome lijinshuai&#39;s Blog"/>
+        <meta property="og:title" content="this,this指向"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +38,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -43,7 +52,7 @@
 
     <!-- Title -->
     
-    <title>归档 - Welcome lijinshuai&#39;s Blog</title>
+    <title>this,this指向 - Welcome lijinshuai&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -132,9 +141,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -142,214 +149,90 @@
     <div class="logo">
         <a href="/lijinshuai_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">归档</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/3-5%20%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        网络，服务器，IP,请求
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">
+                this,this指向
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-09-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="什么是this"><a href="#什么是this" class="headerlink" title="什么是this"></a>什么是this</h1><p>this:JS的关键词，是一个代词“指代不明”，需要代码执行过程中根据上下文判断this的指向。</p>
+<h1 id="默认情况下"><a href="#默认情况下" class="headerlink" title="默认情况下"></a>默认情况下</h1><ul>
+<li>全局域下 ：this代指window</li>
+<li>对象调用方法中 ： this代指这个对象</li>
+<li>直接调用函数 ： 函数中的this代指window</li>
+</ul>
+<h1 id="正常函数的this指向"><a href="#正常函数的this指向" class="headerlink" title="正常函数的this指向"></a>正常函数的this指向</h1><ul>
+<li>全局调用，函数名(),指向window</li>
+<li>对象调用，对象.函数名(),谁调用指向谁</li>
+<li>自执行函数，指向window</li>
+<li>事件处理函数，指向事件源</li>
+<li>定时器处理函数，指向事件源</li>
+<li>函数定义未调用，指向不明确……</li>
+</ul>
+<h1 id="改变this指向"><a href="#改变this指向" class="headerlink" title="改变this指向"></a>改变this指向</h1><ul>
+<li>定义变量：声明变量赋值为this“保存当前this指向”</li>
+<li>使用箭头函数：箭头函数中的this与箭头函数所在的上下文中的this一致。</li>
+<li>使用bind()函数，参数1:”this的新指向” 参数2:”原函数的固化值，实参”，this的新指向。</li>
+<li>使用call()函数，参数1：this指向的对象“如果不写或者null表示window” 参数2~参数n:”原函数的固化值，实参”与函数形参一一对应。</li>
+<li>使用apply()函数，参数1：this指向的对象“如果不写或者null表示window” 参数2:是一个数组“根据数组内的顺序依次传入实参”。</li>
+</ul>
+<h1 id="bind-函数"><a href="#bind-函数" class="headerlink" title="bind 函数"></a>bind 函数</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">不会立即执行函数</span><br><span class="line">返回值：就是一个函数(是一个被改变过this的函数)</span><br><span class="line">他传递参数的方式</span><br><span class="line">1.调用返回的函数传递</span><br><span class="line">2.直接从第二个参数开始一次传递</span><br></pre></td></tr></table></figure>
+
+<h1 id="call-和-apply-的区别"><a href="#call-和-apply-的区别" class="headerlink" title="call 和 apply 的区别"></a>call 和 apply 的区别</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- 相同点</span><br><span class="line">call和apply的功能相同&quot;都是在特定的作用域中调用函数，等于设置函体内的this对象赋值&quot;。</span><br><span class="line"></span><br><span class="line">- 不同点</span><br><span class="line">call和apply的接收参数的方式不同</span><br><span class="line">call方法接收两个或多个参数，第一个this，第二个以后都是参数。</span><br><span class="line">apply方法接收两个参数，第一个this，第二个是数组“参数集合”。</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><ol>
+<li>改变this指向的方法有哪些?</li>
+<li>call 和 apply 的区别?</li>
+</ol>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/lijinshuai_blog/tags/JS/">#JS</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/Ajax/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        AJAX,GET,POST
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/Bom/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        BOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/DOM/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        DOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/07/01/cookie%E7%9A%84%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Jul 2020
-        </span>
-        Cookie内存
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        ES6新特性
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/event/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        event对象
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        this,this指向
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/02/01/js%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Feb 2021
-        </span>
-        JS发展史
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/webStorage/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        webStorage存储数据
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        内存管理
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E4%B8%80%E6%AC%A1HTTP%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        HTTP请求响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E4%BD%9C%E7%94%A8%E5%9F%9F,%E4%B8%8A%E4%B8%8B%E6%96%87,%E9%97%AD%E5%8C%85,%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        作用域链、执行上下文、垃圾回收、闭包
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        原型与原型链
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        前后端响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/04/01/%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2/">
-        <span class="archive-date">
-            Apr 2020
-        </span>
-        响应式布局之媒体查询
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        构造函数
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        数据类型转换
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%AD%A3%E5%88%99/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        正则
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        运算符的优先级
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E8%BF%9B%E7%A8%8B,%E7%BA%BF%E7%A8%8B,%E5%90%8C%E6%AD%A5,%E5%BC%82%E6%AD%A5/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        进程 线程 同步 异步
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/%E9%97%AD%E5%8C%85/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        闭包
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="作用域链、执行上下文、垃圾回收、闭包1、作用域1.1 什么是作用域作用域是在运行时代码中的某些特定部分中变量，函数和对象的可访问性。换句话说，作用域决定了代码区块中变量和其他资源的可见性。我们先来看个例子：
+12345function outFun2() &amp;#123;    var inVariab">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="李金帅">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="作用域链、执行上下文、垃圾回收、闭包"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Welcome lijinshuai&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>作用域链、执行上下文、垃圾回收、闭包 - Welcome lijinshuai&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/lijinshuai_blog/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/tags">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/categories">
+                    类别
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/myjob">
+                    简历
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/lijinshuai_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2020/05/01/%E4%BD%9C%E7%94%A8%E5%9F%9F,%E4%B8%8A%E4%B8%8B%E6%96%87,%E9%97%AD%E5%8C%85,%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/">
+                作用域链、执行上下文、垃圾回收、闭包
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-05-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h4 id="作用域链、执行上下文、垃圾回收、闭包"><a href="#作用域链、执行上下文、垃圾回收、闭包" class="headerlink" title="作用域链、执行上下文、垃圾回收、闭包"></a>作用域链、执行上下文、垃圾回收、闭包</h4><h2 id="1、作用域"><a href="#1、作用域" class="headerlink" title="1、作用域"></a>1、作用域</h2><h3 id="1-1-什么是作用域"><a href="#1-1-什么是作用域" class="headerlink" title="1.1 什么是作用域"></a>1.1 什么是作用域</h3><p>作用域是在运行时代码中的某些特定部分中变量，函数和对象的可访问性。换句话说，作用域决定了代码区块中变量和其他资源的可见性。我们先来看个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outFun2</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> inVariable = <span class="string">&quot;内层变量2&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">outFun2</span>();<span class="comment">//要先执行这个函数，否则根本不知道里面是啥</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(inVariable); <span class="comment">// Uncaught ReferenceError: inVariable is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>从上面的例子可以体会到作用域的概念，变量 inVariable 在全局作用域没有声明，所以在全局作用域下取值会报错。我们可以这样理解：<strong>作用域就是一个独立的地盘，让变量不会外泄、暴露出去</strong>。也就是说<strong>作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。</strong></p>
+<p><strong>ES6 之前 JavaScript 没有块级作用域,只有全局作用域和函数作用域</strong>。ES6 的到来，为我们提供了‘块级作用域’,可通过新增命令 let 和 const 来体现。</p>
+<h3 id="1-2-全局作用域和函数作用域"><a href="#1-2-全局作用域和函数作用域" class="headerlink" title="1.2 全局作用域和函数作用域"></a>1.2 全局作用域和函数作用域</h3><p>在代码中任何地方都能访问到的对象拥有全局作用域，一般来说以下几种情形拥有全局作用域：</p>
+<ul>
+<li><p>最外层函数 和在最外层函数外面定义的变量拥有全局作用域</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var outVariable = &quot;我是最外层变量&quot;; //最外层变量</span><br><span class="line">function outFun() &#123; //最外层函数</span><br><span class="line">    var inVariable = &quot;内层变量&quot;;</span><br><span class="line">    function innerFun() &#123; //内层函数</span><br><span class="line">        console.log(inVariable);</span><br><span class="line">    &#125;</span><br><span class="line">    innerFun();</span><br><span class="line">&#125;</span><br><span class="line">console.log(outVariable); //我是最外层变量</span><br><span class="line">outFun(); //最外层函数</span><br><span class="line">console.log(inVariable); //inVariable is not defined</span><br><span class="line">innerFun(); //innerFun is not defined</span><br></pre></td></tr></table></figure></li>
+<li><p>所有末定义直接赋值的变量自动声明为拥有全局作用域</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function outFun2() &#123;</span><br><span class="line">    variable = &quot;未定义直接赋值的变量&quot;;</span><br><span class="line">    var inVariable2 = &quot;内层变量2&quot;;</span><br><span class="line">&#125;</span><br><span class="line">outFun2();//要先执行这个函数，否则根本不知道里面是啥</span><br><span class="line">console.log(variable); //未定义直接赋值的变量</span><br><span class="line">console.log(inVariable2); //inVariable2 is not defined</span><br></pre></td></tr></table></figure></li>
+<li><p>所有 window 对象的属性拥有全局作用域</p>
+<p>一般情况下，window 对象的内置属性都拥有全局作用域，例如 window.name、window.location、window.top 等等。</p>
+</li>
+</ul>
+<p>全局作用域有个弊端：如果我们写了很多行 JS 代码，变量定义都没有用函数包括，那么它们就全部都在全局作用域中。这样就会 污染全局命名空间, 容易引起命名冲突。</p>
+<p>函数作用域,是指声明在函数内部的变量，和全局作用域相反，局部作用域一般只在固定的代码片段内可访问到，最常见的例如函数内部。</p>
+<p><strong>作用域是分层的，内层作用域可以访问外层作用域的变量，反之则不行</strong>。</p>
+<h3 id="1-3-作用域链"><a href="#1-3-作用域链" class="headerlink" title="1.3 作用域链"></a>1.3 作用域链</h3><h4 id="1-3-1-什么是自由变量"><a href="#1-3-1-什么是自由变量" class="headerlink" title="1.3.1 什么是自由变量"></a>1.3.1 什么是自由变量</h4><p>首先认识一下什么叫做 <strong>自由变量</strong> 。如下代码中，<code>console.log(a)</code>要得到 a 变量，但是在当前的作用域中没有定义 a（可对比一下 b）。<strong>当前作用域没有定义的变量，这成为 自由变量</strong> 。自由变量的值如何得到 —— 向父级作用域寻找（注意：这种说法并不严谨，下文会重点解释）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = 100</span><br><span class="line">function fn() &#123;</span><br><span class="line">    var b = 200</span><br><span class="line">    console.log(a) // 这里的a在这里就是一个自由变量</span><br><span class="line">    console.log(b)</span><br><span class="line">&#125;</span><br><span class="line">fn()</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-2-什么是作用域链"><a href="#1-3-2-什么是作用域链" class="headerlink" title="1.3.2 什么是作用域链"></a>1.3.2 什么是作用域链</h4><p>如果父级也没呢？再一层一层向上寻找，直到找到全局作用域还是没找到，就宣布放弃。这种一层一层的关系，就是 作用域链 。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var a = 100</span><br><span class="line">function F1() &#123;</span><br><span class="line">    var b = 200</span><br><span class="line">    function F2() &#123;</span><br><span class="line">        var c = 300</span><br><span class="line">        console.log(a) // 自由变量，顺作用域链向父作用域找</span><br><span class="line">        console.log(b) // 自由变量，顺作用域链向父作用域找</span><br><span class="line">        console.log(c) // 本作用域的变量</span><br><span class="line">    &#125;</span><br><span class="line">    F2()</span><br><span class="line">&#125;</span><br><span class="line">F1()</span><br></pre></td></tr></table></figure>
+
+<h4 id="1-3-3-关于自由变量的取值"><a href="#1-3-3-关于自由变量的取值" class="headerlink" title="1.3.3 关于自由变量的取值"></a>1.3.3 关于自由变量的取值</h4><p>关于自由变量的值，上文提到要到父作用域中取，其实有时候这种解释会产生歧义。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var x = 10</span><br><span class="line">function fn() &#123;</span><br><span class="line">  console.log(x)</span><br><span class="line">&#125;</span><br><span class="line">function show(f) &#123;</span><br><span class="line">  var x = 20</span><br><span class="line">  (function() &#123;</span><br><span class="line">    f() //10，而不是20</span><br><span class="line">  &#125;)()</span><br><span class="line">&#125;</span><br><span class="line">show(fn)</span><br></pre></td></tr></table></figure>
+
+<p>在 fn 函数中，<strong>取自由变量 x 的值时，要到哪个作用域中取？——要到创建 fn 函数的那个作用域中取</strong>，<strong>无论 fn 函数将在哪里调用</strong>。</p>
+<p>所以，不要在用以上说法了。相比而言，用这句话描述会更加贴切:**要到创建这个函数的那个域”。</p>
+<p>作用域中取值,这里强调的是“创建”，而不是“调用”**，切记切记。</p>
+<h2 id="2、执行上下文栈"><a href="#2、执行上下文栈" class="headerlink" title="2、执行上下文栈"></a>2、执行上下文栈</h2><h3 id="2-1-执行上下文（Execution-Context）"><a href="#2-1-执行上下文（Execution-Context）" class="headerlink" title="2.1 执行上下文（Execution Context）"></a>2.1 执行上下文（Execution Context）</h3><p>执行上下文就是当前 JavaScript 代码被解析和执行时所在环境的抽象概念， JavaScript 中运行任何的代码都是在执行上下文中运行。</p>
+<p>执行上下文（可执行代码段）总共有三种类型：</p>
+<ul>
+<li><p><strong>全局执行上下文（全局代码）</strong>：不在任何函数中的代码都位于全局执行上下文中，只有一个，浏览器中的全局对象就是 window 对象，<code>this</code> 指向这个全局对象。</p>
+</li>
+<li><p><strong>函数执行上下文（函数体）</strong>：只有调用函数时，才会为该函数创建一个新的执行上下文，可以存在无数个，每当一个新的执行上下文被创建，它都会按照特定的顺序执行一系列步骤。</p>
+</li>
+<li><p><strong>Eval 函数执行上下文（eval代码）</strong>： 指的是运行在 <code>eval</code> 函数中的代码，很少用而且不建议使用。</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval(&quot;alert(123)&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>执行上下文又包括三个生命周期阶段：<strong>创建阶段→执行阶段→回收阶段</strong></p>
+<p><strong>1.创建阶段</strong></p>
+<p>当函数被调用，但未执行任何其内部代码之前，会做以下三件事：</p>
+<ul>
+<li>创建变量对象(Variable object，VO)：首先初始化函数的参数arguments，提升函数声明和变量声明。</li>
+<li>创建作用域链（Scope  Chain）：在执行上下文的创建阶段，作用域链是在变量对象之后创建的。作用域链本身包含变量对象。作用域链用于解析变量。当被要求解析变量时，JavaScript 始终从代码嵌套的最内层开始，如果最内层没有找到变量，就会跳转到上一层父作用域中查找，直到找到该变量。</li>
+<li>确定this指向：包括多种情况。</li>
+</ul>
+<p>在一段 JS 脚本执行之前，要先解析代码（所以说 JS  是解释执行的脚本语言），解析的时候会先创建一个全局执行上下文环境，先把代码中即将执行的变量、函数声明都拿出来。变量先暂时赋值为undefined，函数则先声明好可使用。这一步做完了，然后再开始正式执行程序。</p>
+<p>另外，一个函数在被执行之前，也会创建一个函数执行上下文环境，跟全局上下文差不多，不过函数执行上下文中会多出this arguments和函数的参数。</p>
+<p>全局代码的上下文环境数据内容为：</p>
+<table>
+<thead>
+<tr>
+<th>普通变量（包括函数表达式）， 如： var a = 10;</th>
+<th>声明（默认赋值为undefined）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>函数声明， 如： function fn() { }</td>
+<td>赋值</td>
+</tr>
+<tr>
+<td>this</td>
+<td>赋值</td>
+</tr>
+</tbody></table>
+<p>如果代码段是函数体，那么在此基础上需要附加：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>赋值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>arguments</td>
+<td>赋值</td>
+</tr>
+<tr>
+<td>自由变量的取值作用域</td>
+<td>赋值</td>
+</tr>
+</tbody></table>
+<p><strong>2.执行阶段</strong></p>
+<p>进入执行上下文、执行代码</p>
+<p><strong>3.回收阶段</strong></p>
+<p>执行完毕后执行上下文出栈等待垃圾回收</p>
+<p><img src="C:%5Ctypro-images%5Cv2-941bda734e6c6679f3528e8a1343ebd7_1440w.jpg"></p>
+<h3 id="2-2-栈（stack）"><a href="#2-2-栈（stack）" class="headerlink" title="2.2 栈（stack）"></a>2.2 栈（stack）</h3><p><strong>栈是一种操作受限的线性表只允许从一端插入和删除数据。</strong>栈有两种存储方式，即线性存储和链接存储（链表）。栈的一个最重要的特征就是<strong>栈的插入和删除只能在栈顶进行，所以每次删除的元素都是最后进栈的元素，故栈也被称为先进后出表。</strong>每个栈都有一个栈顶指针，它初始值为-1，且总是指向最后一个入栈的元素，<strong>栈有两种处理方式，即进栈（push）和出栈（pop）</strong>，因为在进栈只需要移动一个变量存储空间，所以它的时间复杂度为O(1)，但是对于出栈分两种情况，栈未满时，时间复杂度也为O(1)，但是当栈满时，需要重新分配内存，并移动栈内所有数据，所以此时的时间复杂度为O(n)。</p>
+<p><img src="C:%5Ctypro-images%5C20180917000315795"></p>
+<h3 id="2-3-执行上下文栈（Execution-Context-Stack）"><a href="#2-3-执行上下文栈（Execution-Context-Stack）" class="headerlink" title="2.3 执行上下文栈（Execution Context Stack）"></a>2.3 执行上下文栈（Execution Context Stack）</h3><p>假如我们写的函数多了，每次调用函数时都创建一个新的执行上下文，如何管理创建的那么多执行上下文呢？</p>
+<p>所以 JavaScript 引擎创建了执行上下文栈（Execution context stack，ECS）来管理执行上下文，具有 LIFO（后进先出）的栈结构，用于存储在代码执行期间创建的所有执行上下文。</p>
+<p>首次运行JS代码时，会创建一个<strong>全局</strong>执行上下文并Push到当前的执行栈中。每当发生函数调用，引擎都会为该函数创建一个<strong>新的函数</strong>执行上下文并Push到当前执行栈的顶部，浏览器的JS执行引擎总是访问栈顶的执行上下文。</p>
+<p>根据执行栈LIFO规则，当栈顶函数运行完成后，其对应的<strong>函数</strong>执行上下文将会从执行栈中Pop出，上下文控制权将移到当前执行栈的<strong>下一个</strong>执行上下文，最终移回到<strong>全局</strong>执行上下文，全局上下文只有唯一的一个，它在浏览器关闭时Pop出。</p>
+<h2 id="3、js内存泄露以及垃圾回收机制"><a href="#3、js内存泄露以及垃圾回收机制" class="headerlink" title="3、js内存泄露以及垃圾回收机制"></a>3、js内存泄露以及垃圾回收机制</h2><h3 id="3-1-什么是内存泄漏？"><a href="#3-1-什么是内存泄漏？" class="headerlink" title="3.1 什么是内存泄漏？"></a>3.1 什么是内存泄漏？</h3><p><strong>内存泄漏（Memory Leak）是指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果。</strong></p>
+<p>程序的运行需要内存，只要程序提出要求，操作系统或者运行是就必须供给内存。</p>
+<p>对于持续运行的服务进程，必须及时释放内存，否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。</p>
+<p>不再用到的内存，没有及时释放，就叫做内存泄漏。</p>
+<p>有些语言（比如c语言）必须手动释放内存，程序员负责内存管理。</p>
+<p>这很麻烦，所以大多数语言提供自动内存管理，减轻程序员的负担，这被称为”垃圾回收机制”。</p>
+<h3 id="3-2-垃圾回收机制"><a href="#3-2-垃圾回收机制" class="headerlink" title="3.2 垃圾回收机制"></a>3.2 垃圾回收机制</h3><p>JS自带一套内存管理引擎，负责创建对象、销毁对象，以及垃圾回收。</p>
+<p>垃圾回收机制主要是由一个叫垃圾收集器（garbage collector，简称GC）的后台进程负责监控、清理对象，并及时回收空闲内存。</p>
+<h4 id="3-2-1-可达性（Reachability）"><a href="#3-2-1-可达性（Reachability）" class="headerlink" title="3.2.1 可达性（Reachability）"></a>3.2.1 可达性（Reachability）</h4><p>GC的最主要职责是监控数据的<strong>可达性（reachability）</strong>；哪些数据是所谓的<strong>可达的</strong>呢？</p>
+<ol>
+<li>所有显示调用，被称为<code>根</code>，包括<ul>
+<li>全局对象</li>
+<li>正被调用的函数的局部变量和参数</li>
+<li>相关嵌套函数里的变量和参数</li>
+<li>其他（引擎内部调用的一些变量）</li>
+</ul>
+</li>
+<li>所有从根引用或引用链访问的对象</li>
+</ol>
+<p>举个简单的例子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let user = &#123;</span><br><span class="line">    name: &#x27;Onion&#x27;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里全局变量user指向内存里的对象<code>&#123;name: &#39;Onion&#39;&#125;</code>，我们称其为引用。这时对象Onion（以下均以名字简称）是所谓<strong>可达的</strong>。</p>
+<p>将user置为null后，引用丢失，Onion对象就变成不可达了。最终GC会将它从内存中清除。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user = null</span><br></pre></td></tr></table></figure>
+
+<p>再举一个复杂一点的例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function marry(man, woman) &#123;</span><br><span class="line">  woman.husband = man;</span><br><span class="line">  man.wife = woman;</span><br><span class="line"></span><br><span class="line">  return &#123;</span><br><span class="line">    father: man,</span><br><span class="line">    mother: woman,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let family = marry(&#123;</span><br><span class="line">  name: &quot;Onion&quot;</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  name: &quot;Garlic&quot;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>现在我们删除一些对Onion的引用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete family.father</span><br><span class="line">delete family.mother.husband</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-2-2-“-标记-清除-“算法"><a href="#3-2-2-“-标记-清除-“算法" class="headerlink" title="3.2.2 “ 标记-清除 “算法"></a>3.2.2 “ 标记-清除 “算法</h4><p>基本的垃圾回收算法称为<strong>“标记-清除”</strong>，定期执行以下“垃圾回收”步骤:</p>
+<ul>
+<li>垃圾回收器获取根并<strong>“标记”</strong>(记住)它们。</li>
+<li>然后它访问并“标记”所有来自它们的引用。</li>
+<li>然后它访问标记的对象并标记它们的引用。所有被访问的对象都被记住，以便以后不再访问同一个对象两次。</li>
+<li>以此类推，直到有未访问的引用(可以从根访问)为止。</li>
+<li>除标记的对象外，所有对象都被删除。</li>
+</ul>
+<p>我们可以清楚地看到右边有一个“不可到达的块”。现在让我们看看<strong>“标记并清除”</strong>垃圾回收器如何处理它。</p>
+<p>第一步标记根</p>
+<p>然后标记他们的引用</p>
+<p>以及子孙代的引用:</p>
+<p>现在进程中不能访问的对象被认为是不可访问的，将被删除:</p>
+<p>这就是垃圾收集的工作原理。</p>
+<p>到目前为止，IE、Firefox、Opera、Chrome、Safari的js实现使用的都是标记清除的垃圾回收策略或类似的策略，只不过垃圾收集的时间间隔互不相同。</p>
+<h4 id="3-2-3-引用计数算法"><a href="#3-2-3-引用计数算法" class="headerlink" title="3.2.3 引用计数算法"></a>3.2.3 引用计数算法</h4><p>另一种不太常见的垃圾收集策略叫做引用计数（reference counting）。引用计数的含义是跟踪记录每个值被引用的次数。</p>
+<p>当声明了一个变量并将一个引用类型值赋值该变量时，则这个值的引用次数就是1.如果同一个值又被赋给另外一个变量，则该值得引用次数加1。相反，如果包含对这个值引用的变量又取 得了另外一个值，则这个值的引用次数减 1。当这个值的引用次数变成  0时，则说明没有办法再访问这个值了，因而就可以将其占用的内存空间回收回来。这样，当垃圾收集器下次再运行时，它就会释放那  些引用次数为零的值所占用的内存。 </p>
+<p>语言引擎有一张”引用表”，保存了内存里面所有资源（通常是各种值）的引用次数。如果一个值的引用次数是0，就表示这个值不再用到了，因此可以将这块内存释放。</p>
+<p><img src="C:%5Ctypro-images%5Cbg2017041703.png" alt="img"></p>
+<p>上图中，左下角的两个值，没有任何引用，所以可以释放。</p>
+<p>如果一个值不再需要了，引用数却不为0，垃圾回收机制无法释放这块内存，从而导致内存泄漏。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const arr = [1,2,3,4];  //1 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(&quot;hello world&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码中，数组[1,2,3,4]是一个值，会占用内存。变量arr是仅有的对这个值的引用，因此引用次数为1。尽管后面的代码没有用到arr，它是会持续占用内存。</p>
+<p>如果增加一行代码，解除arr对[1,2,3,4]引用，这块内存就可以被垃圾回收机制释放了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4];</span><br><span class="line"></span><br><span class="line">console.log(&quot;hello world&quot;);</span><br><span class="line"></span><br><span class="line">arr = null;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，arr重置为null，就解除了对[1，2，3，4]的引用，引用次数变成了0，内存就可以释放出来了。</p>
+<p>及时清除引用非常重要。但是，你不可能记得那么多，有时候一疏忽就忘了，所以才有那么多内存泄漏。</p>
+<p>最好能有一种方法，在新建引用的时候就声明，哪些引用必须手动清除，哪些引用可以忽略不计，当其他引用消失以后，垃圾回收机制就可以释放内存。这样就能大大减轻程序员的负担，你只要清除主要引用就可以了。</p>
+<p>ES6 考虑到了这一点，推出了两种新的数据结构：WeakSet和 WeakMap。它们对于值的引用都是不计入垃圾回收机制的，所以名字里面才会有一个”Weak”，表示这是弱引用。</p>
+<p>下面以 WeakMap 为例，看看它是怎么解决内存泄漏的。</p>
+<blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const wm = new WeakMap();</span><br><span class="line"></span><br><span class="line">const element = document.getElementById(&#x27;example&#x27;);</span><br><span class="line"></span><br><span class="line">wm.set(element, &#x27;some information&#x27;);</span><br><span class="line"></span><br><span class="line">wm.get(element) // &quot;some information&quot;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>上面代码中，先新建一个 Weakmap 实例。然后，将一个 DOM 节点作为键名存入该实例，并将一些附加信息作为键值，一起存放在 WeakMap 里面。这时，WeakMap 里面对<code>element</code>的引用就是弱引用，不会被计入垃圾回收机制。</p>
+<p>也就是说，DOM 节点对象的引用计数是<code>1</code>，而不是<code>2</code>。这时，一旦消除对该节点的引用，它占用的内存就会被垃圾回收机制释放。Weakmap 保存的这个键值对，也会自动消失。</p>
+<p>基本上，如果你要往对象上添加数据，又不想干扰垃圾回收机制，就可以使用 WeakMap。</p>
+<h3 id="3-3-常见的内存泄露"><a href="#3-3-常见的内存泄露" class="headerlink" title="3.3 常见的内存泄露"></a>3.3 常见的内存泄露</h3><h4 id="3-3-1-意外的全局变量"><a href="#3-3-1-意外的全局变量" class="headerlink" title="3.3.1 意外的全局变量"></a>3.3.1 意外的全局变量</h4><p><strong>意外的全局变量</strong></p>
+<p>JavaScript 处理未定义变量的方式比较宽松：未定义的变量会在全局对象创建一个新变量。在浏览器中，全局对象是 <code>window</code> 。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params">arg</span>) &#123; </span><br><span class="line"></span><br><span class="line">    bar = <span class="string">&quot;this is a hidden global variable&quot;</span>; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>真相是：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params">arg</span>) &#123; </span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">bar</span> = <span class="string">&quot;this is an explicit global variable&quot;</span>; </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<p>函数 <code>foo</code> 内部忘记使用 <code>var</code> ，意外创建了一个全局变量。</p>
+<p>解决办法：    在 JavaScript 文件头部加上 <code>&#39;use strict&#39;</code>，可以避免此类错误发生。启用严格模式解析 JavaScript ，避免意外的全局变量。”use strict” 的目的是指定代码在严格条件下执行。严格模式下你不能使用未声明的变量。</p>
+<h4 id="3-3-2-被遗忘的计时器或回调函数"><a href="#3-3-2-被遗忘的计时器或回调函数" class="headerlink" title="3.3.2 被遗忘的计时器或回调函数"></a>3.3.2 被遗忘的计时器或回调函数</h4><p>在 JavaScript 中使用 <code>setInterval</code> 非常平常。一段常见的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> someResource = <span class="title function_">getData</span>(); </span><br><span class="line"><span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="keyword">var</span> node = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;Node&#x27;</span>); </span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(node) &#123; </span><br><span class="line">        node.<span class="property">innerHTML</span> = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(someResource)); </span><br><span class="line">    &#125; </span><br><span class="line">&#125;, <span class="number">1000</span>); </span><br></pre></td></tr></table></figure>
+
+<p>此例说明了什么：与节点或数据关联的计时器不再需要，<code>node</code> 对象可以删除，整个回调函数也不需要了。可是，计时器回调函数仍然没被回收（计时器停止才会被回收）。同时，<code>someResource</code> 如果存储了大量的数据，也是无法被回收的。</p>
+<h4 id="3-3-3-脱离-DOM-的引用"><a href="#3-3-3-脱离-DOM-的引用" class="headerlink" title="3.3.3 脱离 DOM 的引用"></a>3.3.3 脱离 DOM 的引用</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var elements = &#123;     </span><br><span class="line">	button: document.getElementById(&#x27;button&#x27;),     </span><br><span class="line">	image: document.getElementById(&#x27;img&#x27;),     </span><br><span class="line">	text: document.getElementById(&#x27;text&#x27;) </span><br><span class="line">&#125;; </span><br><span class="line">function removeButton() &#123; </span><br><span class="line">    // 按钮是 body 的后代元素 </span><br><span class="line">    document.body.removeChild(document.getElementById(&#x27;button&#x27;)); </span><br><span class="line">    // 此时，仍旧存在一个全局的 #button 的引用 </span><br><span class="line">    // elements 字典。button 元素仍旧在内存中，不能被 GC 回收。 </span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h4 id="3-3-4-闭包"><a href="#3-3-4-闭包" class="headerlink" title="3.3.4 闭包"></a>3.3.4 闭包</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var theThing = null; </span><br><span class="line">var replaceThing = function () &#123;   </span><br><span class="line">	var originalThing = theThing;   </span><br><span class="line">	var unused = function () &#123;     </span><br><span class="line">		if (originalThing)       </span><br><span class="line">			console.log(&quot;hi&quot;);   </span><br><span class="line">	&#125;;    </span><br><span class="line">	theThing = &#123;     </span><br><span class="line">		longStr: new Array(1000000).join(&#x27;*&#x27;),    </span><br><span class="line">		someMethod: function () &#123;       </span><br><span class="line">			console.log(&quot;hello&quot;);    </span><br><span class="line">		&#125;   </span><br><span class="line">	&#125;; </span><br><span class="line">&#125;; </span><br><span class="line">setInterval(replaceThing, 1000); </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">代码片段做了一件事情：每次调用 replaceThing ，theThing 得到一个包含一个大数组和一个新闭包（someMethod）的新对象。同时，变量 unused 是一个引用 originalThing 的闭包（先前的 replaceThing 又调用了 theThing ）。思绪混乱了吗？最重要的事情是，闭包的作用域一旦创建，它们有同样的父级作用域，作用域是共享的。someMethod 可以通过 theThing 使用，someMethod 与 unused 分享闭包作用域，尽管 unused从未使用，它引用的 originalThing 迫使它保留在内存中（防止被回收）。当这段代码反复运行，就会看到内存占用不断上升，垃圾回收器（GC）并无法降低内存占用。本质上，闭包的链表已经创建，每一个闭包作用域携带一个指向大数组的间接的引用，造成严重的内存泄露。</span><br><span class="line">在 replaceThing 的最后添加 originalThing = null 。</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、闭包"><a href="#4、闭包" class="headerlink" title="4、闭包"></a>4、闭包</h2><p>js的作用域分两种，全局和局部，基于我们所熟悉的作用域链相关知识，我们知道在js作用域环境中访问变量的权利是由内向外的，内部作用域可以获得当前作用域下的变量并且可以获得当前包含当前作用域的外层作用域下的变量，反之则不能，也就是说在外层作用域下无法获取内层作用域下的变量，同样在不同的函数作用域中也是不能相互访问彼此变量的，那么我们想在一个函数内部也有限权访问另一个函数内部的变量该怎么办呢？闭包就是用来解决这一需求的，闭包的本质就是在一个函数内部创建另一个函数。</p>
+<p><strong>闭包有3个特性：</strong></p>
+<p><strong>①函数嵌套函数</strong></p>
+<p><strong>②函数内部可以引用函数外部的参数和变量</strong></p>
+<p><strong>③参数和变量不会被垃圾回收机制回收</strong></p>
+<p><strong>最后总结一下闭包的好处与坏处</strong></p>
+<p>好处</p>
+<p>①保护函数内的变量安全 ，实现封装，防止变量流入其他环境发生命名冲突</p>
+<p>②在内存中维持一个变量，可以做缓存（但使用多了同时也是一项缺点，消耗内存）</p>
+<p>③匿名自执行函数可以减少内存消耗</p>
+<p>坏处</p>
+<p>①其中一点上面已经有体现了，就是被引用的私有变量不能被销毁，增大了内存消耗，造成内存泄漏，解决方法是可以在使用完变量后手动为它赋值为null；</p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/lijinshuai_blog/tags/JS/">#JS</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a target="_blank" rel="noopener" href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">this,this指向</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/09/01/webStorage/">webStorage存储数据</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/08/01/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">ES6新特性</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/08/01/event/">event对象</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/AJAX/">AJAX</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/Javascript/">Javascript</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/ES6/">ES6</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/HHTTP/">HHTTP</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/lijinshuai21">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:3211384452@qq.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+
+<script src="/lijinshuai_blog/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

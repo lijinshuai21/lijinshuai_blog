@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="一、什么是响应式布局？​    响应式布局指的是同一页面在不同屏幕尺寸下有不同的布局。传统的开发方式是PC端开发一套，手机端再开发一套，而使用响应式布局只要开发一套就够，缺点就是CSS比较重。
+二、响应式布局的实现方案——媒体查询​    CSS3 Media Query（媒体查询）@media可以">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="李金帅">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="响应式布局之媒体查询"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Welcome lijinshuai&#39;s Blog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    
+        <meta name="twitter:card" content="summary" />
+    
+    
+    
+
+    <!-- Title -->
+    
+    <title>响应式布局之媒体查询 - Welcome lijinshuai&#39;s Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/lijinshuai_blog/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+
+<div class="bg-gradient"></div>
+<div class="bg-pattern"></div>
+
+<!-- Menu -->
+<!--Menu Links and Overlay-->
+<div class="menu-bg">
+    <div class="menu-container">
+        <ul>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/">
+                    首页
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/archives">
+                    归档
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/about.html">
+                    关于
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/tags">
+                    标签
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/categories">
+                    类别
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="/lijinshuai_blog/myjob">
+                    简历
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+<!--Hamburger Icon-->
+<nav>
+    <a href="#menu"></a>
+</nav>
+
+<div class="container">
+
+    <!-- Main Content -->
+    <div class="row">
+    <div class="col-sm-12">
+
+        <!--Title and Logo-->
+        <header>
+    <div class="logo">
+        <a href="/lijinshuai_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
+        
+    </div>
+</header>
+
+        <section class="main">
+            
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2020/04/01/%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2/">
+                响应式布局之媒体查询
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-04-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/HTML/">HTML</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="一、什么是响应式布局？"><a href="#一、什么是响应式布局？" class="headerlink" title="一、什么是响应式布局？"></a>一、什么是响应式布局？</h2><p>​    响应式布局指的是同一页面在不同屏幕尺寸下有不同的布局。传统的开发方式是PC端开发一套，手机端再开发一套，而使用响应式布局只要开发一套就够，缺点就是CSS比较重。</p>
+<h2 id="二、响应式布局的实现方案——媒体查询"><a href="#二、响应式布局的实现方案——媒体查询" class="headerlink" title="二、响应式布局的实现方案——媒体查询"></a>二、响应式布局的实现方案——媒体查询</h2><p>​    CSS3 Media Query（媒体查询）@media可以根据不同的屏幕尺寸设置不同的样式，页面布局分别适应移动端、pc端等，在调整浏览器的大小，页面会根据媒体的宽度和高度来重新布置样式。媒体查询可以用于检测很多东西：自动检测viewpoint（视窗）的宽度和高度；设备的宽度和高度；旋转方向（智能手机横屏或竖屏）；分辨率大小。</p>
+<h2 id="三、CSS3语法规则"><a href="#三、CSS3语法规则" class="headerlink" title="三、CSS3语法规则"></a>三、CSS3语法规则</h2><h4 id="（一）直接写在css样式中"><a href="#（一）直接写在css样式中" class="headerlink" title="（一）直接写在css样式中"></a>（一）直接写在css样式中</h4><p>@media mediatype and/not/only (media feature) { CSS-Code }</p>
+<p>如何理解@media的语法规则：<br>使用媒体查询必须是以 @media 开头；</p>
+<p>然后指定设备类型（媒体类型mediatype）；<br>接着是括号()里的规定媒体/设备特征（media feature），媒体特征的书写格式与css样式类似，都是属性名：属性值（例如min-width：200px）；<br>最后跟着的大括号{ css-code }，里面放置的是要设置的css样式。</p>
+<h3 id="逻辑运算符："><a href="#逻辑运算符：" class="headerlink" title="逻辑运算符："></a>逻辑运算符：</h3><p><strong>not：</strong>用来排除某种设备。比如，排除打印设备 @media not print；<br><strong>only：</strong>用以指定某特定媒体设备。对于支持 Media Queries 的移动设备来说，如果存在 only 关键字，移动设备的 Web 浏览器会忽略 only关键字并直接根据后面的表达式应用样式文件。对于不支持 Media Queries 的设备但能够读取 Media Type 类型的 Web浏览器，遇到 only 关键字时会忽略这个样式文件。<br><strong>all：</strong> 适用于所有的设备类型；<br><strong>and：</strong>媒体查询中使用来连接多种媒体特性,一个媒体查询中可以包含0或多个表达式，表达式可以是0或多个关键字，以及一种媒体类型。</p>
+<p>如：@media screen and (max-width:800px) and (min-width:400px)</p>
+<h4 id="（二）-针对不同的媒体设备外部链入不同的-stylesheets（外部样式表）"><a href="#（二）-针对不同的媒体设备外部链入不同的-stylesheets（外部样式表）" class="headerlink" title="（二） 针对不同的媒体设备外部链入不同的 stylesheets（外部样式表）"></a>（二） 针对不同的媒体设备外部链入不同的 stylesheets（外部样式表）</h4><link rel="stylesheet" media="mediatype and|not|only (media feature)" href="mystylesheet.css">
+​    定义媒体查询的部分放在标签内，用media属性标注，media=" 媒体类型 and/not/only（媒体特性）"
+
+<h2 id="四、浏览器兼容"><a href="#四、浏览器兼容" class="headerlink" title="四、浏览器兼容"></a>四、浏览器兼容</h2><p>img</p>
+<h2 id="五、CSS3多媒体的类型-MediaType"><a href="#五、CSS3多媒体的类型-MediaType" class="headerlink" title="五、CSS3多媒体的类型 MediaType"></a>五、CSS3多媒体的类型 MediaType</h2><p>all 适用于所有类型<br>print 适用于打印机和打印预览<br>screen 适用于电脑屏幕、平板电脑、智能手机等<br>speech 适用于屏幕阅读器</p>
+<h2 id="六、媒体特性-Media-Feature-“条件”"><a href="#六、媒体特性-Media-Feature-“条件”" class="headerlink" title="六、媒体特性 Media Feature “条件”"></a>六、媒体特性 Media Feature “条件”</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">值	描述</span><br><span class="line">aspect-ratio	定义输出设备中的页面可见区域宽度与高度的比率</span><br><span class="line">color	定义输出设备每一组彩色原件的个数。如果不是彩色设备，则值等于0</span><br><span class="line">color-index	定义在输出设备的彩色查询表中的条目数。如果没有使用彩色查询表，则值等于0</span><br><span class="line">device-aspect-ratio	定义输出设备的屏幕可见宽度与高度的比率。</span><br><span class="line">device-height	定义输出设备的屏幕可见高度。</span><br><span class="line">device-width	定义输出设备的屏幕可见宽度。</span><br><span class="line">grid	用来查询输出设备是否使用栅格或点阵。</span><br><span class="line">height	定义输出设备中的页面可见区域高度。</span><br><span class="line">max-aspect-ratio	定义输出设备的屏幕可见宽度与高度的最大比率。</span><br><span class="line">max-color	定义输出设备每一组彩色原件的最大个数。</span><br><span class="line">max-color-index	定义在输出设备的彩色查询表中的最大条目数。</span><br><span class="line">max-device-aspect-ratio	定义输出设备的屏幕可见宽度与高度的最大比率。</span><br><span class="line">max-device-height	定义输出设备的屏幕可见的最大高度。</span><br><span class="line">max-device-width	定义输出设备的屏幕最大可见宽度。</span><br><span class="line">max-height	定义输出设备中的页面最大可见区域高度。</span><br><span class="line">max-monochrome	定义在一个单色框架缓冲区中每像素包含的最大单色原件个数。</span><br><span class="line">max-resolution	定义设备的最大分辨率。</span><br><span class="line">max-width	定义输出设备中的页面最大可见区域宽度。</span><br><span class="line">min-aspect-ratio	定义输出设备中的页面可见区域宽度与高度的最小比率。</span><br><span class="line">min-color	定义输出设备每一组彩色原件的最小个数。</span><br><span class="line">min-color-index	定义在输出设备的彩色查询表中的最小条目数。</span><br><span class="line">min-device-aspect-ratio	定义输出设备的屏幕可见宽度与高度的最小比率。</span><br><span class="line">min-device-width	定义输出设备的屏幕最小可见宽度。</span><br><span class="line">min-device-height	定义输出设备的屏幕的最小可见高度。</span><br><span class="line">min-height	定义输出设备中的页面最小可见区域高度。</span><br><span class="line">min-monochrome	定义在一个单色框架缓冲区中每像素包含的最小单色原件个数</span><br><span class="line">min-resolution	定义设备的最小分辨率。</span><br><span class="line">min-width	定义输出设备中的页面最小可见区域宽度。</span><br><span class="line">monochrome	定义在一个单色框架缓冲区中每像素包含的单色原件个数。如果不是单色设备，则值等于0</span><br><span class="line">orientation	定义输出设备中的页面可见区域高度是否大于或等于宽度。 值：landscape：横屏        portrait:竖屏</span><br><span class="line">resolution	定义设备的分辨率。如：96dpi, 300dpi, 118dpcm</span><br><span class="line">scan	定义电视类设备的扫描工序。</span><br><span class="line">width	定义输出设备中的页面可见区域宽度。</span><br><span class="line">min-device-pixel-ratio 最小设备像素比。</span><br><span class="line">width/height ：定义输出设备中的 页面可见区域宽度/高度，输出的是你的网页可见区域的宽高。</span><br><span class="line">device-width/height ：定义输出设备的屏幕可见宽/高度。不管你的网页是在safari打开还是嵌在某个webview中，device-width都只跟你的设备有关，如果是同一个设备，那么他的值就不会变。比如iphone6的device-width、device-height为375、667,而跟他的dpr等无关。</span><br></pre></td></tr></table></figure>
+<p>样例网站: 星巴克官网,苹果官网,三星官网 </p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/lijinshuai_blog/tags/HTML/">#HTML</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
+</div>
+        </section>
+
+    </div>
+</div>
+
+
+</div>
+
+<!-- Footer -->
+<div class="push"></div>
+
+<footer class="footer-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 footer-about">
+                <h2>About</h2>
+                <p>
+                    This theme was developed by <a target="_blank" rel="noopener" href="https://github.com/klugjo">Jonathan Klughertz</a>. The source code is available on Github. Create Websites. Make Magic.
+                </p>
+            </div>
+            
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 recent-posts">
+        <h2>Recent Posts</h2>
+        <ul>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">this,this指向</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/09/01/webStorage/">webStorage存储数据</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/08/01/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">ES6新特性</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/08/01/event/">event对象</a>
+            </li>
+            
+        </ul>
+    </div>
+
+
+
+            
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/AJAX/">AJAX</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/Javascript/">Javascript</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/ES6/">ES6</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/HHTTP/">HHTTP</a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <ul class="list-inline footer-social-icons">
+                    
+                    <li class="list-inline-item">
+                        <a target="_blank" rel="noopener" href="https://github.com/lijinshuai21">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-github"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="mailto:3211384452@qq.com">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-envelope-o"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item">
+                        <a href="\#">
+                            <span class="footer-icon-container">
+                                <i class="fa fa-rss"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="footer-copyright">
+                    @Untitled. All right reserved | Design & Hexo <a target="_blank" rel="noopener" href="http://www.codeblocq.com/">Jonathan Klughertz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- After footer scripts -->
+
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Tween Max -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenMax.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Custom JavaScript -->
+
+<script src="/lijinshuai_blog/js/main.js"></script>
+
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>

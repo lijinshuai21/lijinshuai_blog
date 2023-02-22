@@ -10,6 +10,12 @@
 
     <!--Description-->
     
+        <meta name="description" content="什么是内存JS中是在创建变量，对象，字符串等时自动进行分配内存，并且在不使用他们的时候“自动”释放，释放的过程叫做“垃圾回收”。
+内存的生命周期
+内存分配：当我们声明变量，函数，对象时，系统会自动为他们分配内存。
+内存使用：读写内存，就是使用变量，函数等。
+内存释放：使用完毕，由垃圾回收机制自动回收">
+    
 
     <!--Author-->
     
@@ -18,7 +24,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Welcome lijinshuai&#39;s Blog"/>
+        <meta property="og:title" content="内存管理"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +35,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -43,7 +49,7 @@
 
     <!-- Title -->
     
-    <title>归档 - Welcome lijinshuai&#39;s Blog</title>
+    <title>内存管理 - Welcome lijinshuai&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -132,9 +138,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -142,214 +146,115 @@
     <div class="logo">
         <a href="/lijinshuai_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">归档</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/3-5%20%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        网络，服务器，IP,请求
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2020/06/01/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
+                内存管理
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2020-06-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/计算机/">计算机</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="什么是内存"><a href="#什么是内存" class="headerlink" title="什么是内存"></a>什么是内存</h1><p>JS中是在创建变量，对象，字符串等时自动进行分配内存，并且在不使用他们的时候“自动”释放，释放的过程叫做“垃圾回收”。</p>
+<h1 id="内存的生命周期"><a href="#内存的生命周期" class="headerlink" title="内存的生命周期"></a>内存的生命周期</h1><ul>
+<li>内存分配：当我们声明变量，函数，对象时，系统会自动为他们分配内存。</li>
+<li>内存使用：读写内存，就是使用变量，函数等。</li>
+<li>内存释放：使用完毕，由垃圾回收机制自动回收使用的内存。</li>
+</ul>
+<h1 id="内存的概念"><a href="#内存的概念" class="headerlink" title="内存的概念"></a>内存的概念</h1><p>在硬件层面，计算机内存是由大量的触发器)组成的。每一个触发器都包含有一些晶体管，能够存储1比特。单个触发器可通过一个唯一标识符来寻址，这样我们就可以读和写了。因此从概念上讲，我们可以把计算机内存看作是一个巨大的比特数组，我们可以对它进行读和写。<br>有很多东西都存储在内存中：</p>
+<ol>
+<li>所有被程序使用的变量和其他数据</li>
+<li>程序的代码，包括操作系统自身的代码<br>当你编译你的代码时，编译器可以检查原始的数据类型并且提前计算出将会需要多少内存。然后把所需的（内存）容量分配给调用栈空间中的程序。这些变量因为函数被调用而分配到的空间被称为堆栈空间，它们的内存增加在现存的内存上面（累加）。如它们不再被需要就会按照 LIFO（后进，先出）的顺序被移除。</li>
+</ol>
+<h1 id="JS内存的分配"><a href="#JS内存的分配" class="headerlink" title="JS内存的分配"></a>JS内存的分配</h1><p>JS一般在定义变量时就完成内存分配。</p>
+<h1 id="JS使用内存"><a href="#JS使用内存" class="headerlink" title="JS使用内存"></a>JS使用内存</h1><p>在JS中使用分配的内存，就是“读写变量的值 或 对象的属性，或给函数传参”</p>
+<h1 id="JS内存回收"><a href="#JS内存回收" class="headerlink" title="JS内存回收"></a>JS内存回收</h1><p>当内存不再需要的时候需要释放掉<br>大部分的内存管理问题出现在这个阶段（这里最难的任务是指出在什么时候分配的内存不再被需要，这通常要开发者来决定程序中的哪一块内存不再被需要了，并释放）。</p>
+<h1 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h1><ul>
+<li><p>引用计数垃圾回收<br>最初的垃圾回收算法，“内存不再使用”，看内存中是否有指向它的引用。</p>
+</li>
+<li><p>标记清除算法<br>标记清除将“不再使用的对象”定义为“无法达到的对象”。就是从根部出发定时扫描内存中的对象“但凡能从根部代打的对象都是需要使用的”无法从根部出发触及到对象被标记为不再使用“稍后进行回收”。</p>
+</li>
+</ul>
+<h1 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h1><ol>
+<li>意外的全局变量<br>JS处理未定义变量的方式比较松“未定义的变量会在全对象创建一个新的变量在浏览器中”</li>
+</ol>
+<ul>
+<li>解决方法：使用严格模式，在文件头部添加’use strict’</li>
+</ul>
+<ol start="2">
+<li><p>没有释放的计时器或回调函数</p>
+</li>
+<li><p>脱离DOM的引用</p>
+</li>
+<li><p>闭包</p>
+</li>
+</ol>
+<h1 id="避免内存泄漏"><a href="#避免内存泄漏" class="headerlink" title="避免内存泄漏"></a>避免内存泄漏</h1><ul>
+<li>不用的东西及时归还</li>
+</ul>
+<ol>
+<li>减少不必要的全局变量，使用严格模式避免意外创建全局对象。</li>
+<li>在使用完数据后，及时解除引用（闭包中的变量，dom的引用，定时器清除）</li>
+<li>组织好你的逻辑，避免死循环等造成的浏览器卡顿，崩溃问题。</li>
+</ol>
+<h1 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h1><ul>
+<li>可执行的代码段 </li>
+</ul>
+<ol>
+<li>全局执行上下文：不在任何函数中的代码，只有一个，this全部指向window。</li>
+<li>函数执行上下文：只有调用函数才会为该函数创建一个新的执行上下文，可以有多个。</li>
+<li>Eval函数执行上下文：不建议使用。</li>
+</ol>
+<p>-执行上下文的生命周期</p>
+<ol>
+<li>创建阶段</li>
+<li>执行阶段</li>
+<li>回收阶段 (执行完毕后执行上下文会出 栈 等待垃圾回收);</li>
+</ol>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/lijinshuai_blog/tags/内存/">#内存</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/Ajax/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        AJAX,GET,POST
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/Bom/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        BOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/DOM/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        DOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/07/01/cookie%E7%9A%84%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Jul 2020
-        </span>
-        Cookie内存
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        ES6新特性
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/event/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        event对象
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        this,this指向
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/02/01/js%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Feb 2021
-        </span>
-        JS发展史
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/webStorage/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        webStorage存储数据
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        内存管理
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E4%B8%80%E6%AC%A1HTTP%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        HTTP请求响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E4%BD%9C%E7%94%A8%E5%9F%9F,%E4%B8%8A%E4%B8%8B%E6%96%87,%E9%97%AD%E5%8C%85,%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        作用域链、执行上下文、垃圾回收、闭包
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        原型与原型链
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        前后端响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/04/01/%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2/">
-        <span class="archive-date">
-            Apr 2020
-        </span>
-        响应式布局之媒体查询
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        构造函数
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        数据类型转换
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%AD%A3%E5%88%99/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        正则
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        运算符的优先级
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E8%BF%9B%E7%A8%8B,%E7%BA%BF%E7%A8%8B,%E5%90%8C%E6%AD%A5,%E5%BC%82%E6%AD%A5/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        进程 线程 同步 异步
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/%E9%97%AD%E5%8C%85/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        闭包
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

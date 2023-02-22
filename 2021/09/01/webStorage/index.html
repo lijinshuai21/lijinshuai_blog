@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="1. 什么是webStorage?123456789101112131415161718192021webStorage是h5提供的新特性(ES6 ES2015)，和cookie类似，用来保存数据，让数据在浏览器上共享。它分两种类型：sessionStorage会话存储，localStorage本地">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Welcome lijinshuai&#39;s Blog"/>
+        <meta property="og:title" content="webStorage存储数据"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -43,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>归档 - Welcome lijinshuai&#39;s Blog</title>
+    <title>webStorage存储数据 - Welcome lijinshuai&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -132,9 +134,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -142,214 +142,77 @@
     <div class="logo">
         <a href="/lijinshuai_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">归档</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/3-5%20%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        网络，服务器，IP,请求
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/09/01/webStorage/">
+                webStorage存储数据
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-09-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/计算机/">计算机</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="1-什么是webStorage"><a href="#1-什么是webStorage" class="headerlink" title="1. 什么是webStorage?"></a>1. 什么是webStorage?</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">webStorage是h5提供的新特性(ES6 ES2015)，和cookie类似，用来保存数据，让数据在浏览器上共享。</span><br><span class="line">它分两种类型：sessionStorage会话存储，localStorage本地存储。</span><br><span class="line"></span><br><span class="line">使用HTML5可以在本地存储用户的浏览数据。早些时候,本地存储使用的是 cookie。但是Web 存储需要更加的安全与快速，这些数据不会被保存在服务器上（重点），但是这些数据只用于用户请求网站数据上。它也可以存储大量的数据（重点），而不影响网站的性能。数据以 键/值 对存在, web网页的数据只允许该网页访问使用。</span><br><span class="line"></span><br><span class="line">使用webStorage时，客户端和服务器通讯时，客户端不需要携带webStorage存储的数据。</span><br><span class="line">而使用cookie时，客户端和服务器通讯时，客户端要携带cookie数据传递给服务器，让服务器根据cookie存储的数据验证客户端的身份。</span><br><span class="line"></span><br><span class="line">Web Storage的目的是为了克服由cookie带来的一些限制，当数据需要被严格控制在客户端上时，无须持续地将数据发回服务器。</span><br><span class="line"></span><br><span class="line">1kb = 1024bit(字节)  1M=1024kb</span><br><span class="line"></span><br><span class="line">cookie和webStorage的区别：</span><br><span class="line"></span><br><span class="line">cookie存储的数据小，大概4kb；</span><br><span class="line">cookie可以存储在服务器，又可以存储在客户端;</span><br><span class="line">cookie不安全;</span><br><span class="line">cookie需要携带，占用网络带宽，性能低。</span><br><span class="line">webStorage大概能存储5M；</span><br><span class="line">webStorage安全性高;</span><br><span class="line">webStorage不需要携带，只能存储在客户端。</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>webStorage 和 cookie 的区别？（防面试）<br>webStorage比cookie安全<br>webStorage比cookie存储的数量大<br>webStorage无需在客户端和服务器请求过程中携带，而cookie需要。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33188563/article/details/82154292">https://blog.csdn.net/qq_33188563/article/details/82154292</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lidongcn/p/4493496.html">https://www.cnblogs.com/lidongcn/p/4493496.html</a></p>
+<ol start="3">
+<li>sessionStorage 和 localStorage API，方法名称和使用方式都一样。</li>
+</ol>
+<p>length 属性。<br>setItem (key, value) ——  保存数据，以键值对的方式储存信息。<br>getItem (key) ——  获取数据，将键值传入，即可获取到对应的value值。<br>removeItem (key) ——  删除单个数据，根据键值移除对应的信息。<br>clear () ——  删除所有的数据<br>key (index) —— 获取某个索引的key</p>
+<p><strong>最大缺点：兼容性。低版本浏览器不认识它。</strong></p>
+<h1 id="webStorage-和-cookie-的区别？"><a href="#webStorage-和-cookie-的区别？" class="headerlink" title="webStorage 和 cookie 的区别？"></a>webStorage 和 cookie 的区别？</h1><h2 id="共同点："><a href="#共同点：" class="headerlink" title="共同点："></a>共同点：</h2><p>都是保存在浏览器端，且同源的。<br>cookie:存储在用户本地终端上的数据。数据存储空间小。<br>localStorage:没有时间限制的数据存储，数据存储空间大<br>sessionStorage:针对一个 session 的数据存储,当用户关  闭浏览器窗口后，数据会被删除。</p>
+<h2 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h2><p>cookie：数据始终在同源的http请求中携带。cookie数据不能超  过4k，同时因为每次http请求都会携带cookie，所以cookie只适  合保存很小的数据。<br>sessionStorage和localStorage不会自动把数据发给服务器，仅  在本地保存。sessionStorage和localStorage 虽然也有存储大  小的限制，但比cookie大得多，可以达到5M或更大。</p>
+<ol>
+<li>大小不同<br>cookie：数据不能超过4k。<br>sessionStorage和localStorage 虽然也有存储大小的限制，但<br>比cookie大得多，可以达到5M或更大。</li>
+<li>有效期不同<br>cookie:可设置过期时间，直到设置时间到达之前  ，浏览器窗口关闭时也保留数据。<br>localStorage:始终有效，即使浏览器窗口关闭。<br>sessionStorage:当浏览器窗口关闭前有效，不能持久保持</li>
+<li>作用域不同<br>cookie:所有同源窗口中都是共享的。<br>localStorage:在所有同源窗口中都是共享的。<br>sessionStorage:不在不同的浏览器窗口中共享，即使是同一个页面。</li>
+</ol>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/lijinshuai_blog/tags/内存/">#内存</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/Ajax/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        AJAX,GET,POST
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/Bom/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        BOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/DOM/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        DOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/07/01/cookie%E7%9A%84%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Jul 2020
-        </span>
-        Cookie内存
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        ES6新特性
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/event/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        event对象
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        this,this指向
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/02/01/js%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Feb 2021
-        </span>
-        JS发展史
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/webStorage/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        webStorage存储数据
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        内存管理
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E4%B8%80%E6%AC%A1HTTP%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        HTTP请求响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E4%BD%9C%E7%94%A8%E5%9F%9F,%E4%B8%8A%E4%B8%8B%E6%96%87,%E9%97%AD%E5%8C%85,%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        作用域链、执行上下文、垃圾回收、闭包
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        原型与原型链
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        前后端响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/04/01/%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2/">
-        <span class="archive-date">
-            Apr 2020
-        </span>
-        响应式布局之媒体查询
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        构造函数
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        数据类型转换
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%AD%A3%E5%88%99/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        正则
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        运算符的优先级
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E8%BF%9B%E7%A8%8B,%E7%BA%BF%E7%A8%8B,%E5%90%8C%E6%AD%A5,%E5%BC%82%E6%AD%A5/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        进程 线程 同步 异步
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/%E9%97%AD%E5%8C%85/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        闭包
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

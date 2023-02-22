@@ -10,6 +10,15 @@
 
     <!--Description-->
     
+        <meta name="description" content="构造函数
+概念：用来构造一个实例函数。
+语法：1.函数名首字母大写function Person(){}。 2.使用new实例对象var pes = new Peerson();
+使用方法：对象调属性的方式获取函数内数据。
+使用场景：JS内置对象不够用的时候。
+
+继承父类构造函数内方法
+注意：不能继">
+    
 
     <!--Author-->
     
@@ -18,7 +27,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Welcome lijinshuai&#39;s Blog"/>
+        <meta property="og:title" content="构造函数"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +38,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -43,7 +52,7 @@
 
     <!-- Title -->
     
-    <title>归档 - Welcome lijinshuai&#39;s Blog</title>
+    <title>构造函数 - Welcome lijinshuai&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -132,9 +141,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -142,214 +149,83 @@
     <div class="logo">
         <a href="/lijinshuai_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">归档</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/3-5%20%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        网络，服务器，IP,请求
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/04/01/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
+                构造函数
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-04-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><ul>
+<li>概念：用来构造一个实例函数。</li>
+<li>语法：1.函数名首字母大写<strong>function Person(){}<strong>。 2.使用new实例对象</strong>var pes = new Peerson();</strong></li>
+<li>使用方法：对象调属性的方式获取函数内数据。</li>
+<li>使用场景：JS内置对象不够用的时候。</li>
+</ul>
+<h1 id="继承父类构造函数内方法"><a href="#继承父类构造函数内方法" class="headerlink" title="继承父类构造函数内方法"></a>继承父类构造函数内方法</h1><ul>
+<li>注意：不能继承父类原型上方法</li>
+<li>作用：只能使用父类构造函数内方法 **”父类函数内方法改变，子类相同”**，不能使用父类原型上方法。</li>
+<li>语法：在子类函数内添加 <strong>父类.apply(this,[…………]);</strong> </li>
+<li>结果：子类拥有<strong>父类构造函数内方法</strong>及自己<strong>本身构造函数内方法</strong>。</li>
+</ul>
+<h1 id="继承父类原型方法"><a href="#继承父类原型方法" class="headerlink" title="继承父类原型方法"></a>继承父类原型方法</h1><ul>
+<li>注意：不能继承父类原构造函数内方法</li>
+<li>作用：只能使用父类原型上方法 **”父类原型方法改变，子类相同”**，不能使用父类构造函数内方法。</li>
+<li>语法：子类.prototype = Object.create(父类.prototype); //子类得到了父类原型上的方法</li>
+<li>语法：子类.prototype.constructor = 子类构造函数; //让子类的构造函数属性指向自己。</li>
+<li>结果：子类拥有<strong>父类原型上方法</strong>及自己<strong>本身构造函数内方法</strong> 和 <strong>自己原型上方法</strong>。</li>
+</ul>
+<h1 id="继承父类构造函数及原型方法"><a href="#继承父类构造函数及原型方法" class="headerlink" title="继承父类构造函数及原型方法"></a>继承父类构造函数及原型方法</h1><ul>
+<li>方法：上面两种方法合并使用。</li>
+<li>结果：子类可以使用<strong>自己构造函数内方法及父类构造函数内方法</strong> 和 <strong>自己原型上方法及父类原型上方法</strong></li>
+<li>注意：<strong>父类更新构造函数内和原型上方法子类同时更新</strong>，子类更新父类不受任何影响。</li>
+</ul>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/lijinshuai_blog/tags/JS/">#JS</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/Ajax/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        AJAX,GET,POST
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/Bom/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        BOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/DOM/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        DOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/07/01/cookie%E7%9A%84%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Jul 2020
-        </span>
-        Cookie内存
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        ES6新特性
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/event/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        event对象
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        this,this指向
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/02/01/js%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Feb 2021
-        </span>
-        JS发展史
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/webStorage/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        webStorage存储数据
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        内存管理
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E4%B8%80%E6%AC%A1HTTP%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        HTTP请求响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E4%BD%9C%E7%94%A8%E5%9F%9F,%E4%B8%8A%E4%B8%8B%E6%96%87,%E9%97%AD%E5%8C%85,%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        作用域链、执行上下文、垃圾回收、闭包
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        原型与原型链
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        前后端响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/04/01/%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2/">
-        <span class="archive-date">
-            Apr 2020
-        </span>
-        响应式布局之媒体查询
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        构造函数
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        数据类型转换
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%AD%A3%E5%88%99/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        正则
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        运算符的优先级
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E8%BF%9B%E7%A8%8B,%E7%BA%BF%E7%A8%8B,%E5%90%8C%E6%AD%A5,%E5%BC%82%E6%AD%A5/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        进程 线程 同步 异步
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/%E9%97%AD%E5%8C%85/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        闭包
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 

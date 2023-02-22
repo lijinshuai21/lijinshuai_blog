@@ -13,19 +13,19 @@
 
     <!--Author-->
     
-        <meta name="author" content="John Doe">
+        <meta name="author" content="李金帅">
     
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hexo"/>
+        <meta property="og:title" content="Welcome lijinshuai&#39;s Blog"/>
     
 
     <!--Open Graph Description-->
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:site_name" content="Welcome lijinshuai&#39;s Blog"/>
 
     <!--Type page-->
     
@@ -43,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Hexo</title>
+    <title>Welcome lijinshuai&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -86,37 +86,37 @@
             
             <li class="menu-item">
                 <a href="/lijinshuai_blog/">
-                    Home
+                    首页
                 </a>
             </li>
             
             <li class="menu-item">
                 <a href="/lijinshuai_blog/archives">
-                    Archives
+                    归档
                 </a>
             </li>
             
             <li class="menu-item">
                 <a href="/lijinshuai_blog/about.html">
-                    About
+                    关于
                 </a>
             </li>
             
             <li class="menu-item">
                 <a href="/lijinshuai_blog/tags">
-                    Tags
+                    标签
                 </a>
             </li>
             
             <li class="menu-item">
                 <a href="/lijinshuai_blog/categories">
-                    Categories
+                    类别
                 </a>
             </li>
             
             <li class="menu-item">
-                <a href="/lijinshuai_blog/contact.html">
-                    Contact
+                <a href="/lijinshuai_blog/myjob">
+                    简历
                 </a>
             </li>
             
@@ -140,7 +140,7 @@
     <div class="logo">
         <a href="/lijinshuai_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">Hexo</h1>
+            <h1 id="main-title" class="title">Welcome lijinshuai's Blog</h1>
         
     </div>
 </header>
@@ -152,34 +152,782 @@
 
     <div class="post-header index">
         <h1 class="title">
-            <a href="/lijinshuai_blog/2023/02/20/hello-world/">
-                Hello World
+            <a href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">
+                this,this指向
             </a>
         </h1>
         <div class="post-info">
             
-                <span class="date">2023-02-20</span>
+                <span class="date">2021-09-01</span>
             
             
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/JavaScript/">JavaScript</a>
+                </span>
             
         </div>
     </div>
 
     
         <div class="content">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+            <h1 id="什么是this"><a href="#什么是this" class="headerlink" title="什么是this"></a>什么是this</h1><p>this:JS的关键词，是一个代词“指代不明”，需要代码执行过程中根据上下文判断this的指向。</p>
+<h1 id="默认情况下"><a href="#默认情况下" class="headerlink" title="默认情况下"></a>默认情况下</h1><ul>
+<li>全局域下 ：this代指window</li>
+<li>对象调用方法中 ： this代指这个对象</li>
+<li>直接调用函数 ： 函数中的this代指window</li>
+</ul>
+<h1 id="正常函数的this指向"><a href="#正常函数的this指向" class="headerlink" title="正常函数的this指向"></a>正常函数的this指向</h1><ul>
+<li>全局调用，函数名(),指向window</li>
+<li>对象调用，对象.函数名(),谁调用指向谁</li>
+<li>自执行函数，指向window</li>
+<li>事件处理函数，指向事件源</li>
+<li>定时器处理函数，指向事件源</li>
+<li>函数定义未调用，指向不明确……</li>
+</ul>
+<h1 id="改变this指向"><a href="#改变this指向" class="headerlink" title="改变this指向"></a>改变this指向</h1><ul>
+<li>定义变量：声明变量赋值为this“保存当前this指向”</li>
+<li>使用箭头函数：箭头函数中的this与箭头函数所在的上下文中的this一致。</li>
+<li>使用bind()函数，参数1:”this的新指向” 参数2:”原函数的固化值，实参”，this的新指向。</li>
+<li>使用call()函数，参数1：this指向的对象“如果不写或者null表示window” 参数2~参数n:”原函数的固化值，实参”与函数形参一一对应。</li>
+<li>使用apply()函数，参数1：this指向的对象“如果不写或者null表示window” 参数2:是一个数组“根据数组内的顺序依次传入实参”。</li>
+</ul>
+<h1 id="bind-函数"><a href="#bind-函数" class="headerlink" title="bind 函数"></a>bind 函数</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">不会立即执行函数</span><br><span class="line">返回值：就是一个函数(是一个被改变过this的函数)</span><br><span class="line">他传递参数的方式</span><br><span class="line">1.调用返回的函数传递</span><br><span class="line">2.直接从第二个参数开始一次传递</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h1 id="call-和-apply-的区别"><a href="#call-和-apply-的区别" class="headerlink" title="call 和 apply 的区别"></a>call 和 apply 的区别</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- 相同点</span><br><span class="line">call和apply的功能相同&quot;都是在特定的作用域中调用函数，等于设置函体内的this对象赋值&quot;。</span><br><span class="line"></span><br><span class="line">- 不同点</span><br><span class="line">call和apply的接收参数的方式不同</span><br><span class="line">call方法接收两个或多个参数，第一个this，第二个以后都是参数。</span><br><span class="line">apply方法接收两个参数，第一个this，第二个是数组“参数集合”。</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><ol>
+<li>改变this指向的方法有哪些?</li>
+<li>call 和 apply 的区别?</li>
+</ol>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/09/01/webStorage/">
+                webStorage存储数据
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-09-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/计算机/">计算机</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="1-什么是webStorage"><a href="#1-什么是webStorage" class="headerlink" title="1. 什么是webStorage?"></a>1. 什么是webStorage?</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">webStorage是h5提供的新特性(ES6 ES2015)，和cookie类似，用来保存数据，让数据在浏览器上共享。</span><br><span class="line">它分两种类型：sessionStorage会话存储，localStorage本地存储。</span><br><span class="line"></span><br><span class="line">使用HTML5可以在本地存储用户的浏览数据。早些时候,本地存储使用的是 cookie。但是Web 存储需要更加的安全与快速，这些数据不会被保存在服务器上（重点），但是这些数据只用于用户请求网站数据上。它也可以存储大量的数据（重点），而不影响网站的性能。数据以 键/值 对存在, web网页的数据只允许该网页访问使用。</span><br><span class="line"></span><br><span class="line">使用webStorage时，客户端和服务器通讯时，客户端不需要携带webStorage存储的数据。</span><br><span class="line">而使用cookie时，客户端和服务器通讯时，客户端要携带cookie数据传递给服务器，让服务器根据cookie存储的数据验证客户端的身份。</span><br><span class="line"></span><br><span class="line">Web Storage的目的是为了克服由cookie带来的一些限制，当数据需要被严格控制在客户端上时，无须持续地将数据发回服务器。</span><br><span class="line"></span><br><span class="line">1kb = 1024bit(字节)  1M=1024kb</span><br><span class="line"></span><br><span class="line">cookie和webStorage的区别：</span><br><span class="line"></span><br><span class="line">cookie存储的数据小，大概4kb；</span><br><span class="line">cookie可以存储在服务器，又可以存储在客户端;</span><br><span class="line">cookie不安全;</span><br><span class="line">cookie需要携带，占用网络带宽，性能低。</span><br><span class="line">webStorage大概能存储5M；</span><br><span class="line">webStorage安全性高;</span><br><span class="line">webStorage不需要携带，只能存储在客户端。</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>webStorage 和 cookie 的区别？（防面试）<br>webStorage比cookie安全<br>webStorage比cookie存储的数量大<br>webStorage无需在客户端和服务器请求过程中携带，而cookie需要。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33188563/article/details/82154292">https://blog.csdn.net/qq_33188563/article/details/82154292</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lidongcn/p/4493496.html">https://www.cnblogs.com/lidongcn/p/4493496.html</a></p>
+<ol start="3">
+<li>sessionStorage 和 localStorage API，方法名称和使用方式都一样。</li>
+</ol>
+<p>length 属性。<br>setItem (key, value) ——  保存数据，以键值对的方式储存信息。<br>getItem (key) ——  获取数据，将键值传入，即可获取到对应的value值。<br>removeItem (key) ——  删除单个数据，根据键值移除对应的信息。<br>clear () ——  删除所有的数据<br>key (index) —— 获取某个索引的key</p>
+<p><strong>最大缺点：兼容性。低版本浏览器不认识它。</strong></p>
+<h1 id="webStorage-和-cookie-的区别？"><a href="#webStorage-和-cookie-的区别？" class="headerlink" title="webStorage 和 cookie 的区别？"></a>webStorage 和 cookie 的区别？</h1><h2 id="共同点："><a href="#共同点：" class="headerlink" title="共同点："></a>共同点：</h2><p>都是保存在浏览器端，且同源的。<br>cookie:存储在用户本地终端上的数据。数据存储空间小。<br>localStorage:没有时间限制的数据存储，数据存储空间大<br>sessionStorage:针对一个 session 的数据存储,当用户关  闭浏览器窗口后，数据会被删除。</p>
+<h2 id="区别："><a href="#区别：" class="headerlink" title="区别："></a>区别：</h2><p>cookie：数据始终在同源的http请求中携带。cookie数据不能超  过4k，同时因为每次http请求都会携带cookie，所以cookie只适  合保存很小的数据。<br>sessionStorage和localStorage不会自动把数据发给服务器，仅  在本地保存。sessionStorage和localStorage 虽然也有存储大  小的限制，但比cookie大得多，可以达到5M或更大。</p>
+<ol>
+<li>大小不同<br>cookie：数据不能超过4k。<br>sessionStorage和localStorage 虽然也有存储大小的限制，但<br>比cookie大得多，可以达到5M或更大。</li>
+<li>有效期不同<br>cookie:可设置过期时间，直到设置时间到达之前  ，浏览器窗口关闭时也保留数据。<br>localStorage:始终有效，即使浏览器窗口关闭。<br>sessionStorage:当浏览器窗口关闭前有效，不能持久保持</li>
+<li>作用域不同<br>cookie:所有同源窗口中都是共享的。<br>localStorage:在所有同源窗口中都是共享的。<br>sessionStorage:不在不同的浏览器窗口中共享，即使是同一个页面。</li>
+</ol>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/08/01/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">
+                ES6新特性
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-08-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/ES6/">ES6</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="ES6新特性"><a href="#ES6新特性" class="headerlink" title="ES6新特性"></a>ES6新特性</h1><h3 id="1、let、const"><a href="#1、let、const" class="headerlink" title="1、let、const"></a>1、let、const</h3><p><strong>let 特点</strong></p>
+<ol>
+<li>新增块级作用域</li>
+<li>同一作用域不允许重复声明</li>
+<li>不支持变量提升</li>
+<li>for采用let;设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域</li>
+<li>暂时性死区：在代码块内，使用<code>let</code>命令声明变量之前，该变量都是不可用的</li>
+<li><code>let</code>命令、<code>const</code>命令、<code>class</code>命令声明的全局变量，不属于顶层对象的属性。</li>
+</ol>
+<p><strong>const 特点</strong></p>
+<ol>
+<li>声明时必须赋值</li>
+<li>赋值后，无法修改 </li>
+<li>其余，同let</li>
+</ol>
+<p><strong>注意：对象const的表现。</strong></p>
+<p>综上，定义变量的方式有 六种；</p>
+<ol>
+<li><p>var</p>
+</li>
+<li><p>function</p>
+</li>
+<li><p>let</p>
+</li>
+<li><p>const</p>
+</li>
+<li><p>class</p>
+</li>
+<li><p>import</p>
+</li>
+</ol>
+<p>顶层对象</p>
+<p>JavaScript 语言存在一个顶层对象，它提供全局环境（即全局作用域），所有代码都是在这个环境中运行。但是，顶层对象在各种实现里面是不统一的。</p>
+<ul>
+<li>浏览器里面，顶层对象是<code>window</code>，但 Node 和 Web Worker 没有<code>window</code>。</li>
+<li>浏览器和 Web Worker 里面，<code>self</code>也指向顶层对象，但是 Node 没有<code>self</code>。</li>
+<li>Node 里面，顶层对象是<code>global</code>，但其他环境都不支持。</li>
+</ul>
+<p>同一段代码为了能够在各种环境，都能取到顶层对象，现在一般是使用<code>this</code>变量，但是有局限性。</p>
+<ul>
+<li>全局环境中，<code>this</code>会返回顶层对象。但是，Node.js 模块中<code>this</code>返回的是当前模块，ES6 模块中<code>this</code>返回的是<code>undefined</code>。</li>
+<li>函数里面的<code>this</code>，如果函数不是作为对象的方法运行，而是单纯作为函数运行，<code>this</code>会指向顶层对象。但是，严格模式下，这时<code>this</code>会返回<code>undefined</code>。</li>
+<li>不管是严格模式，还是普通模式，<code>new Function(&#39;return this&#39;)()</code>，总是会返回全局对象。但是，如果浏览器用了 CSP（Content Security Policy，内容安全策略），那么<code>eval</code>、<code>new Function</code>这些方法都可能无法使用。</li>
+</ul>
+<h3 id="2、解构赋值"><a href="#2、解构赋值" class="headerlink" title="2、解构赋值"></a>2、解构赋值</h3><p>解构赋值是基于模式匹配的。 可以设置默认值。</p>
+<ol>
+<li>数组解构赋值</li>
+<li>对象解构赋值</li>
+<li>函数参数解构赋值</li>
+<li>字符串解构赋值</li>
+</ol>
+<p>解构赋值的作用：</p>
+<ol>
+<li><p>交换变量的值</p>
+</li>
+<li><p>函数参数定义</p>
+</li>
+<li><p>函数参数设置默认值</p>
+</li>
+<li><p>从函数返回多个值</p>
+</li>
+<li><p>导入模块的指定方法 </p>
+</li>
+<li><p>从json中提取数据</p>
+</li>
+<li><p>遍历map结构 </p>
+</li>
+</ol>
+<h3 id="3、模板字符串"><a href="#3、模板字符串" class="headerlink" title="3、模板字符串"></a>3、模板字符串</h3><p>${}中是js表达式。</p>
+<h3 id="4、字符串新增方法、数值新增属性、数组新增方法、对象新增方法"><a href="#4、字符串新增方法、数值新增属性、数组新增方法、对象新增方法" class="headerlink" title="4、字符串新增方法、数值新增属性、数组新增方法、对象新增方法"></a>4、字符串新增方法、数值新增属性、数组新增方法、对象新增方法</h3><h3 id="5、函数扩展"><a href="#5、函数扩展" class="headerlink" title="5、函数扩展"></a>5、函数扩展</h3><p>函数的默认参数 ： 函数的length属性，为函数参数的数目，不包含默认参数</p>
+<p>函数的剩余参数：…变量名； 剩余参数后不能再有其他参数</p>
+<p>函数的name属性： 返回函数的名称；</p>
+<p>箭头函数有几个使用注意点：</p>
+<ol>
+<li>函数体内的<code>this</code>对象，就是定义时所在的对象，而不是使用时所在的对象。</li>
+<li>不可以当作构造函数，也就是说，不可以使用<code>new</code>命令，否则会抛出一个错误。</li>
+<li>不可以使用<code>arguments</code>对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。</li>
+<li>不可以使用<code>yield</code>命令，因此箭头函数不能用作 Generator 函数。</li>
+<li> 定义对象的方法时，不要使用箭头函数。</li>
+</ol>
+<h3 id="6、扩展运算符"><a href="#6、扩展运算符" class="headerlink" title="6、扩展运算符"></a>6、扩展运算符</h3><p>扩展运算符（spread）是三个点（<code>...</code>）。</p>
+<p>数组\对象复制、数组\对象合并、与解构赋值结合、将字符串转化为字符数组、将实现了 Iterator 接口的对象转化为数组。</p>
+<h3 id="7、对象的扩展"><a href="#7、对象的扩展" class="headerlink" title="7、对象的扩展"></a>7、对象的扩展</h3><p>属性（数据属性、方法属性）的简洁写法、属性名表达式、表达式还可以用于定义方法名。</p>
+<p><strong>注意，简写的对象方法不能用作构造函数，会报错。</strong></p>
+<p><strong>属性的可枚举性</strong></p>
+<p>对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。<code>Object.getOwnPropertyDescriptor</code>方法可以获取该属性的描述对象。</p>
+<p>描述对象的<code>enumerable</code>属性，称为“可枚举性”，如果该属性为<code>false</code>，就表示某些操作会忽略当前属性。</p>
+<p>目前，有四个操作会忽略<code>enumerable</code>为<code>false</code>的属性。</p>
+<ul>
+<li><code>for...in</code>循环：只遍历对象自身的和继承的可枚举的属性。</li>
+<li><code>Object.keys()</code>：返回对象自身的所有可枚举的属性的键名。</li>
+<li><code>JSON.stringify()</code>：只串行化对象自身的可枚举的属性。</li>
+<li><code>Object.assign()</code>： 忽略<code>enumerable</code>为<code>false</code>的属性，只拷贝对象自身的可枚举的属性。</li>
+</ul>
+<p>这四个操作之中，前三个是 ES5 就有的，最后一个<code>Object.assign()</code>是 ES6 新增的。其中，只有<code>for...in</code>会返回继承的属性，其他三个方法都会忽略继承的属性，只处理对象自身的属性。实际上，引入“可枚举”（<code>enumerable</code>）这个概念的最初目的，就是让某些属性可以规避掉<code>for...in</code>操作，不然所有内部属性和方法都会被遍历到。比如，对象原型的<code>toString</code>方法，以及数组的<code>length</code>属性，就通过“可枚举性”，从而避免被<code>for...in</code>遍历到。</p>
+<p><strong>属性的遍历</strong></p>
+<p>ES6 一共有 5 种方法可以遍历对象的属性。</p>
+<p><strong>（1）for…in</strong></p>
+<p><code>for...in</code>循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。</p>
+<p><strong>（2）Object.keys(obj)</strong></p>
+<p><code>Object.keys</code>返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。</p>
+<p><strong>（3）Object.getOwnPropertyNames(obj)</strong></p>
+<p><code>Object.getOwnPropertyNames</code>返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。</p>
+<p><strong>（4）Object.getOwnPropertySymbols(obj)</strong></p>
+<p><code>Object.getOwnPropertySymbols</code>返回一个数组，包含对象自身的所有 Symbol 属性的键名。</p>
+<p><strong>（5）Reflect.ownKeys(obj)</strong></p>
+<p><code>Reflect.ownKeys</code>返回一个数组，包含对象自身的（不含继承的）所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。</p>
+<p>以上的 5 种方法遍历对象的键名，都遵守同样的属性遍历的次序规则。</p>
+<ul>
+<li>首先遍历所有数值键，按照数值升序排列。</li>
+<li>其次遍历所有字符串键，按照加入时间升序排列。</li>
+<li>最后遍历所有 Symbol 键，按照加入时间升序排列。</li>
+</ul>
+<p><strong><code>this</code>关键字总是指向函数所在的当前对象，ES6 又新增了另一个类似的关键字<code>super</code>，指向当前对象的原型对象。</strong></p>
+<p><strong>链判断运算符</strong></p>
+<p>编程实务中，如果读取对象内部的某个属性，往往需要判断一下该对象是否存在。比如，要读取<code>message.body.user.firstName</code>，安全的写法是写成下面这样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 错误的写法</span></span><br><span class="line"><span class="keyword">const</span>  firstName = message.<span class="property">body</span>.<span class="property">user</span>.<span class="property">firstName</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正确的写法</span></span><br><span class="line"><span class="keyword">const</span> firstName = (message</span><br><span class="line">  &amp;&amp; message.<span class="property">body</span></span><br><span class="line">  &amp;&amp; message.<span class="property">body</span>.<span class="property">user</span></span><br><span class="line">  &amp;&amp; message.<span class="property">body</span>.<span class="property">user</span>.<span class="property">firstName</span>) || <span class="string">&#x27;default&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>上面例子中，<code>firstName</code>属性在对象的第四层，所以需要判断四次，每一层是否有值。</p>
+<p>三元运算符<code>?:</code>也常用于判断对象是否存在。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fooInput = myForm.<span class="title function_">querySelector</span>(<span class="string">&#x27;input[name=foo]&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> fooValue = fooInput ? fooInput.<span class="property">value</span> : <span class="literal">undefined</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>这样的层层判断非常麻烦，因此 ES2020引入了“链判断运算符”（optional chaining operator）<code>?.</code>，简化上面的写法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> firstName = message?.<span class="property">body</span>?.<span class="property">user</span>?.<span class="property">firstName</span> || <span class="string">&#x27;default&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> fooValue = myForm.<span class="title function_">querySelector</span>(<span class="string">&#x27;input[name=foo]&#x27;</span>)?.<span class="property">value</span></span><br></pre></td></tr></table></figure>
+
+<p>下面是判断对象方法是否存在，如果存在就立即执行的例子。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iterator.<span class="property">return</span>?.()</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="8、Symbol类型"><a href="#8、Symbol类型" class="headerlink" title="8、Symbol类型"></a>8、Symbol类型</h3><p>ES5 的对象属性名都是字符串，这容易造成属性名的冲突。</p>
+<p>比如，你使用了一个他人提供的对象，但又想为这个对象添加新的方法（mixin 模式），新方法的名字就有可能与现有方法产生冲突。如果有一种机制，保证每个属性的名字都是独一无二的就好了，这样就从根本上防止属性名的冲突。这就是 ES6 引入<code>Symbol</code>的原因。</p>
+<p>ES6 引入了一种新的原始数据类型<code>Symbol</code>，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，前六种是：<code>undefined</code>、<code>null</code>、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。</p>
+<p>Symbol 值通过<code>Symbol</code>函数生成。这就是说，<strong>对象的属性名现在可以有两种类型，一种是原来就有的字符串，另一种就是新增的 Symbol 类型。凡是属性名属于 Symbol 类型，就都是独一无二的，可以保证不会与其他属性名产生冲突。</strong></p>
+<p>Symbol 作为属性名，遍历对象的时候，该属性不会出现在<code>for...in</code>、<code>for...of</code>循环中，也不会被<code>Object.keys()</code>、<code>Object.getOwnPropertyNames()</code>、<code>JSON.stringify()</code>返回。</p>
+<p>但是，它也不是私有属性，有一个<code>Object.getOwnPropertySymbols()</code>方法，可以获取指定对象的所有 Symbol 属性名。该方法返回一个数组，成员是当前对象的所有用作属性名的 Symbol 值。</p>
+<p>内置的 Symbol 值：除了定义自己使用的 Symbol 值以外，ES6 还提供了 11 个内置的 Symbol 值，指向语言内部使用的方法。</p>
+<p><strong>Symbol.hasInstance</strong></p>
+<p>对象的<code>Symbol.hasInstance</code>属性，指向一个内部方法。当其他对象使用<code>instanceof</code>运算符，判断是否为该对象的实例时，会调用这个方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Even</span> &#123;</span><br><span class="line">  <span class="keyword">static</span> [<span class="title class_">Symbol</span>.<span class="property">hasInstance</span>](obj) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Number</span>(obj) % <span class="number">2</span> === <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同于</span></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Even</span> = &#123;</span><br><span class="line">  [<span class="title class_">Symbol</span>.<span class="property">hasInstance</span>](obj) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Number</span>(obj) % <span class="number">2</span> === <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="number">1</span> <span class="keyword">instanceof</span> <span class="title class_">Even</span> <span class="comment">// false</span></span><br><span class="line"><span class="number">2</span> <span class="keyword">instanceof</span> <span class="title class_">Even</span> <span class="comment">// true</span></span><br><span class="line"><span class="number">12345</span> <span class="keyword">instanceof</span> <span class="title class_">Even</span> <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="9、遍历器-和-for-of"><a href="#9、遍历器-和-for-of" class="headerlink" title="9、遍历器 和 for-of"></a>9、遍历器 和 for-of</h3><p>ES6 借鉴 C++、Java、C# 和 Python 语言，引入了<code>for...of</code>循环，作为遍历所有数据结构的统一的方法。</p>
+<p>一个数据结构只要部署了<code>Symbol.iterator</code>属性，就被视为具有 iterator 接口，就可以用<code>for...of</code>循环遍历它的成员。也就是说，<code>for...of</code>循环内部调用的是数据结构的<code>Symbol.iterator</code>方法。</p>
+<p><code>for...of</code>循环可以使用的范围包括数组、Set 和 Map 结构、某些类似数组的对象（比如<code>arguments</code>对象、DOM NodeList 对象）、后文的 Generator 对象，以及字符串。</p>
+<p>JavaScript 原有的表示“集合”的数据结构，主要是数组（<code>Array</code>）和对象（<code>Object</code>），ES6 又添加了<code>Map</code>和<code>Set</code>。这样就有了四种数据集合，用户还可以组合使用它们，定义自己的数据结构，比如数组的成员是<code>Map</code>，<code>Map</code>的成员是对象。这样就需要一种统一的接口机制，来处理所有不同的数据结构。</p>
+<p>遍历器（Iterator）就是这样一种机制。它是一种接口，为各种不同的数据结构提供统一的访问机制。任何数据结构只要部署 Iterator 接口，就可以完成遍历操作（即依次处理该数据结构的所有成员）。</p>
+<p>Iterator 的作用有三个：一是为各种数据结构，提供一个统一的、简便的访问接口；二是使得数据结构的成员能够按某种次序排列；三是 ES6 创造了一种新的遍历命令<code>for...of</code>循环，Iterator 接口主要供<code>for...of</code>消费。</p>
+<p>Iterator 的遍历过程是这样的。</p>
+<p>（1）创建一个指针对象，指向当前数据结构的起始位置。也就是说，遍历器对象本质上，就是一个指针对象。</p>
+<p>（2）第一次调用指针对象的<code>next</code>方法，可以将指针指向数据结构的第一个成员。</p>
+<p>（3）第二次调用指针对象的<code>next</code>方法，指针就指向数据结构的第二个成员。</p>
+<p>（4）不断调用指针对象的<code>next</code>方法，直到它指向数据结构的结束位置。</p>
+<p>每一次调用<code>next</code>方法，都会返回数据结构的当前成员的信息。具体来说，就是返回一个包含<code>value</code>和<code>done</code>两个属性的对象。其中，<code>value</code>属性是当前成员的值，<code>done</code>属性是一个布尔值，表示遍历是否结束。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/08/01/event/">
+                event对象
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-08-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="event对象"><a href="#event对象" class="headerlink" title="event对象"></a>event对象</h1><p>在触发的事件的函数里面我们会接收到一个event对象,通过该对象我们需要的一些参数,比如说我们需要知道此事件作用到谁身上了,就可以通过event的属性target来获取到(IE暂且不谈),或者想阻止浏览器的默认行为可以通过方法 preventDefault( )来进行阻止.以下是 event对象的一些属性和方法</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">button</td>
+<td align="center">返回当事件被触发时，哪个鼠标按钮被点击。</td>
+</tr>
+<tr>
+<td align="center">clientX</td>
+<td align="center">返回当事件被触发时，鼠标指针的水平坐标。</td>
+</tr>
+<tr>
+<td align="center">clientY</td>
+<td align="center">返回当事件被触发时，鼠标指针的垂直坐标。</td>
+</tr>
+<tr>
+<td align="center">ctrlKey</td>
+<td align="center">返回当事件被触发时，”CTRL” 键是否被按下。</td>
+</tr>
+<tr>
+<td align="center">metaKey</td>
+<td align="center">返回当事件被触发时，”meta” 键是否被按下。</td>
+</tr>
+<tr>
+<td align="center">relatedTarget</td>
+<td align="center">返回与事件的目标节点相关的节点。</td>
+</tr>
+<tr>
+<td align="center">screenX</td>
+<td align="center">返回当某个事件被触发时，鼠标指针的水平坐标。</td>
+</tr>
+<tr>
+<td align="center">screenY</td>
+<td align="center">返回当某个事件被触发时，鼠标指针的垂直坐标。</td>
+</tr>
+<tr>
+<td align="center">shiftKey</td>
+<td align="center">返回当事件被触发时，”SHIFT” 键是否被按下。</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>IE 属性(除了上面的鼠标/事件属性，IE 浏览器还支持下面的属性)</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/06/01/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/">
+                前后端响应
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-06-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/HHTTP/">HHTTP</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="HTTP请求与相应的组成："><a href="#HTTP请求与相应的组成：" class="headerlink" title="HTTP请求与相应的组成："></a>HTTP请求与相应的组成：</h1><ul>
+<li>RequestHeaders：HTTP请求头信息，用来描述一些元数据</li>
+<li>HTTP请求体。也就是请求的正文</li>
+<li>ResponseHeaders：HTTP响应头信息，用来描述一些元数据</li>
+<li>HTTP响应体，也就是响应的正文</li>
+</ul>
+<h1 id="HHTP请求方法："><a href="#HHTP请求方法：" class="headerlink" title="HHTP请求方法："></a>HHTP请求方法：</h1><p>   <strong>GET</strong>：常用语向服务器查询某些信息，必要时，可以将查询字符串参数追加到UTL末尾，以便将信息发送给服务器。<br>   <strong>POST</strong>：常用于指定资源提交数据进行处理请求(例如提交表单或者上传文件)，数据被包含在请求体中(body体)。请求可能会导致新的资源的建立或已有的资源的修改。</p>
+<h1 id="响应状态码："><a href="#响应状态码：" class="headerlink" title="响应状态码："></a>响应状态码：</h1><ul>
+<li>它以“清晰明确”的语言告诉客户端(浏览器)本次请求的处理结果，一般由3位数字代码组成。</li>
+</ul>
+<h3 id="HTTP状态码："><a href="#HTTP状态码：" class="headerlink" title="HTTP状态码："></a>HTTP状态码：</h3><ul>
+<li>1XX 接收信息正在处理</li>
+<li>2XX 正常处理完毕 （200 ok请求成功）</li>
+<li>3XX 附加操作  （301 永久重定向。 302 临时重定向）</li>
+<li>4XX 无法处理  （400 语法错误。 401 未认证。 403 禁止访问。404 资源未找到）</li>
+<li>5XX 请求出错  （500 服务器故障。503服务器繁忙）</li>
+</ul>
+<h1 id="请求的过程"><a href="#请求的过程" class="headerlink" title="请求的过程"></a>请求的过程</h1><ol>
+<li>web ：页面的内容及数据展示</li>
+<li>数据库 ：管理的数据仓库“管理大量的数据”</li>
+<li>nodeJS：后端服务器，向前端提供需要显示在网页内容的数据</li>
+</ol>
+<h4 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h4><pre><code>- 前端 : 没办法和数据库直接通信，前端发起请求
+- 后端 ：请求来到后端的程序文件中，通过后端的逻辑处理去到数据库”操作数据库，获取操作结果“
+- 数据库 ： 数据库返回操作的结果，把结果响应给前端进行展示
+</code></pre>
+<h1 id="AJAX技术"><a href="#AJAX技术" class="headerlink" title="AJAX技术"></a>AJAX技术</h1><ul>
+<li>Ajax即 Asynchronous Javascript And XML(异步JavaScript 和 XML)，是指一种创建交互式，快速动态网页应用的网页开发技术，无需重新加载整个网页的情况下，能够更新部分网页的技术。</li>
+<li>通过与后台与服务器进行少量数据交换，Ajax可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</li>
+<li>局部刷新技术：部分网页内容进行刷新(例如:下拉刷新列表，上拉加载更多列表，用户名是否被注册，地图“放大局部时加载数据”，等……)，不用刷新整个网页</li>
+<li>异步：Ajax在http响应没有结束的时候，可以继续进行后续操作，从而提高用户体验。</li>
+</ul>
+<h1 id="KOA框架搭建后端环境"><a href="#KOA框架搭建后端环境" class="headerlink" title="KOA框架搭建后端环境"></a>KOA框架搭建后端环境</h1><p>原因：前端不能直接操作数据库，得通过先访问后端，通过后端操作数据库 </p>
+<p>选择使用nodeJS作为后端环境，因为nodeJS的底层语言也是JS“使用方便，易懂”</p>
+<p>Ajax主要是是前后端进行通信交互的技术，先不涉及数据库</p>
+<p>KOA：基于Node.js平台的下一代web框架“利用koa可以快速搭建一个web后台环境”</p>
+<p>koa环境搭建：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1. 安装Node.js  ,10以上的版本就行</span><br><span class="line">2. 安装脚手架：npm i -g koa-generator    </span><br><span class="line">3. 安装成功后输入命令 koa2 qqsports    (koa2是koa第2版本，qqsports是文件名)，创建一个项目文件夹(创建一些初始的代码)</span><br><span class="line">4. 输入命令 cd qqsports   进入文件夹</span><br><span class="line">5. 输入命令 npm i  安装依赖</span><br><span class="line">6. 输入命令  npm run dev  来启动koa框架</span><br><span class="line">7. 打开浏览器再地址栏输入  localhost:3000  （页面出现hello koa2，说明运行成功）</span><br><span class="line">8. 走到这一步说明我们已经拥有了一个后端环境，端口号是localhost ，域名是3000   </span><br><span class="line">9. &quot;http://localhost:3000&quot; 访问koa2应用</span><br><span class="line">10. 访问资源：在public目录下有3个文件夹(是脚手架自己创建的)，可以随意的在此目录下放资源，我们可以通过我们的url访问到。</span><br><span class="line">	例如：在public文件的image文件中放入一张图片，在地址栏“localhost:3000/images/图片名“，查看图片。</span><br><span class="line">		 在public文件内添加一个html文件在地址栏”localhost:3000/文件名”，运行文件。</span><br></pre></td></tr></table></figure>
+
+<h1 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h1><p>概念：如何定义应用的端口及如何响应客户端的请求“也就是说我们浏览器发起一个请求到我们的服务器上面，其实呢就是先要保证有一个请求地址也就是我们的url，而这个url也就是路由,在koa框架中路由系统已经被搭建好在文件的routes文件中”</p>
+<p>总结：<br>    KOA框架：快速搭建一个后端环境，这样后端可以编写相关代码，前端也能发起各种http请求。<br>    KOA框架是基于Node.js开发的，而Node.js只是作为后端执行环境使用“Node.js后端语言是JS”</p>
+<h1 id="Ajax的基本框架"><a href="#Ajax的基本框架" class="headerlink" title="Ajax的基本框架"></a>Ajax的基本框架</h1><h3 id="创建XMLHttpRequest"><a href="#创建XMLHttpRequest" class="headerlink" title="创建XMLHttpRequest"></a>创建XMLHttpRequest</h3><p>Ajax通过原生的XMLHttpRequest对象发出HTTP请求，得到服务器返回的数据后，再进行处理。XMLHTTPRequest对象是Ajax的主要接口，用于浏览器与服务器之间的通信</p>
+<ol>
+<li><p>创建,实例化xhr对象<br>var xhr = new XMLHTTPRequest();</p>
+</li>
+<li><p>xhr实例下的load事件，用来监听请求是否已经成功完成<br>xhr. onload =  function( ){ console.log(‘请求已经完成’) ；}</p>
+</li>
+<li><p>发出HTTP请求<br>xhr实例创建成功后，使用open() 和 send() 方法发出HTTP请求<br>open:连接 ，参数1请求的方式，参数2请求的url，参数3是否异步true异步false异步“可省略默认值为true”<br>send:发送数据<br>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://localhost/list&#39;,&#39;true&#39;">http://localhost/list&#39;,&#39;true&#39;</a>)<br>xhr.send()</p>
+</li>
+<li><p>去routes的index.js文件中编写一下list路由<br>// 根据上面变写<br>// ctx 是表示执行上下文，它包含请求对象和响应对象<br>router.get(‘/list’, async (ctx, next)=&gt;{</p>
+<pre><code>//随便返回一个字符串测试
+
+   ctx.body = &quot;list Data&quot;;
+</code></pre>
+<p>   })</p>
+</li>
+<li><p>刷新浏览器，在控制台查看请求状态“输出结果，查看list状态码，response响应的结果”</p>
+</li>
+<li><p>发送POST请求，发送请求方式相同把GET改为POST</p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>基本框架，步骤1：创建xhr对象 “所有的Ajax操作都是通过这个实例来完成的”<br>基本框架，步骤2：监听请求是否完成 “onload触发代表请求完成，可以在事件函数中操作，比如页面的渲染工作”<br>基本框架，步骤3：发出HTTP请求  “在浏览器端如何发送一个HTTP请求访问指定的服务端，通过xhr的open方法连接 和 send方法发送”</p>
+<h1 id="请求操作"><a href="#请求操作" class="headerlink" title="请求操作"></a>请求操作</h1><h3 id="GET发送数据"><a href="#GET发送数据" class="headerlink" title="GET发送数据"></a>GET发送数据</h3><p>原理：GET请求通过哦查询字符串参数的方式把请求体内容传输给后端，要求通过附加url后面进行传输。<br>xhr.open(‘GET’,’<a target="_blank" rel="noopener" href="http://localhost/list?type=phone&amp;count=20&#39;,true">http://localhost/list?type=phone&amp;count=20&#39;,true</a>)<br>xhr.send();<br>演示：<br>html文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// GET请求传输数据</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onload = function()&#123;</span><br><span class="line">        console.log(&quot;请求完成&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(&#x27;GET&#x27;,&#x27;/list?type=phone&amp;count=20&#x27;,true);</span><br><span class="line">    xhr.send();</span><br></pre></td></tr></table></figure>
+
+<p>接口文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">router.get(&#x27;/list&#x27;, async (ctx, next)=&gt;&#123;</span><br><span class="line">	// 接收get传输的数据</span><br><span class="line">  	// 通过ctx下面有一个request对象的query</span><br><span class="line">  		console.log(ctx.request.query);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+
+<pre><code>![](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220709101040068.png)
+</code></pre>
+<p>通过命令行窗口，koa框架会把发过来的查询字符换进行解析，解析为对象的格式<br><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220709101240646.png"></p>
+<h3 id="POST发送数据"><a href="#POST发送数据" class="headerlink" title="POST发送数据"></a>POST发送数据</h3><p>POST请求默认通过纯文本的方式把请求体内容传给后端，要求通过send()方法参数进行传输<br>xhr.open(‘POST’,’<a target="_blank" rel="noopener" href="http://localhost/register&#39;,true">http://localhost/register&#39;,true</a>);<br>xhr.send(‘James’); //方法内是纯文本数据<br>但是前后端交互不建议使用纯文本，还是推荐使用key，value组合的方式发送数据。<br>POST如果想发送key，value组合的数据可以通过 “名称/值”对的方式吧请求体内容穿给后端，要求通过    setRequestHeader()方法进行设置<br>    xhr.open(‘OPST’,’<a target="_blank" rel="noopener" href="http://localhost/register&#39;,true">http://localhost/register&#39;,true</a>);<br>    xhr.setRequestHeader(‘Content-Type’,’application/x-www-form-urlencoded’);<br>    xhr.send(‘username=James&amp;password=123456’);<br>演示：<br>html文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// POST请求传输数据</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onload = function()&#123;</span><br><span class="line">        console.log(&quot;请求完成&quot;);</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(&#x27;POST&#x27;,&#x27;/list2&#x27;,true);</span><br><span class="line">    xhr.setRequestHeader(&#x27;Content-Type&#x27;,&#x27;application/x-www-form-urlencoded&#x27;)</span><br><span class="line">    xhr.send(&#x27;username=James&amp;password=123456&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>接口文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// post请求</span><br><span class="line">	router.post(&#x27;/list2&#x27;, async (ctx, next)=&gt;&#123;</span><br><span class="line">  		ctx.body = &quot;list2 Data&quot;;</span><br><span class="line">  		// 接收post传输的数据</span><br><span class="line">  		// 通过ctx下面有一个request对象的body</span><br><span class="line">  		console.log(ctx.request.body);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>打开浏览器发送请求，数据通过请求体查看内容，在终端中查看返回的数据。</p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>GET发送数据：url?后面，通过查询字符串参数形式发送。<br>POST发送数据：send()方法参数，类型为纯文本，转换为“名称/值”对 或 文件 或 JSON等。</p>
+<h1 id="Ajax的响应操作"><a href="#Ajax的响应操作" class="headerlink" title="Ajax的响应操作"></a>Ajax的响应操作</h1><p>status是XMLHttpRequest对象的一个属性，表示响应的HTTP状态码</p>
+<p>responseText响应字符串<br>返回从服务器接收到的字符产，该属性为只读。只有HTTP请求完成接收后，该属性才会包含完整的数据。<br>例如：<br>    if(xhr.status == 200){<br>            console.log(xhr.responseText)<br>    }<br>演示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 请求的响应判断</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onload = function()&#123;</span><br><span class="line">        if(xhr.status == 200)&#123;</span><br><span class="line">            console.log(xhr.responseText);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(&#x27;GET&#x27;,&#x27;/list&#x27;,true);</span><br><span class="line">    xhr.send(&#x27;username=James&amp;password=123456&#x27;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="responseXML响应XML文档"><a href="#responseXML响应XML文档" class="headerlink" title="responseXML响应XML文档"></a>responseXML响应XML文档</h3><p>概念：返回从服务器接收到的XML文档对象，该属性为只读</p>
+<p>文档：和html相似都是标签组成的数据，XML标签是自定义的，复杂，建议使用JSON</p>
+<p>l过程如图所示：</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20220709110833909.png"></p>
+<h3 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h3><p>响应数据：类型可以是字符串，XML文档，二进制数据，JSON数据</p>
+<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><p>概念：JSON（JavaScirpt Object Notation）是一种轻量级的数据交换格式。它使人们容易的进行阅读和编写。同时也方便了机器的解析和生成。</p>
+<p>格式：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 单租JSON</span><br><span class="line">&#123;&quot;username&quot;:&quot;James&quot;,&quot;password&quot;:&#x27;123456&#x27;&#125;</span><br><span class="line">// 多组JSON</span><br><span class="line">[</span><br><span class="line">	&#123;&quot;username&quot;:&quot;James&quot;,&quot;password&quot;:&#x27;123456&#x27;&#125;,</span><br><span class="line">	&#123;&quot;username&quot;:&quot;Hero&quot;,&quot;password&quot;:&#x27;111111&#x27;&#125;,</span><br><span class="line">	&#123;&quot;username&quot;:&quot;LISA&quot;,&quot;password&quot;:&#x27;666666&#x27;&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="JSON规范"><a href="#JSON规范" class="headerlink" title="JSON规范"></a>JSON规范</h3><ul>
+<li>key属性和字符串类型值，必须使用双引号。</li>
+<li>指的类型范围有限：string，number，object，array，boolean，null ，其他类型不支持。</li>
+<li>最后一组数据，不能够添加逗号结束。</li>
+</ul>
+<p>演示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// JSON格式数据</span><br><span class="line"> var json = &#123;</span><br><span class="line">     &quot;username&quot;: &quot;James&quot;,</span><br><span class="line">     &quot;foo&quot;: null</span><br><span class="line"> &#125;;</span><br><span class="line"> // 作为对象，数据很容易拿到数据，但是在后端往浏览器响应数据的时候是字符串类型的JSON，所以需要解析JSON字符串</span><br><span class="line"> console.log(json.username);</span><br><span class="line"></span><br><span class="line"> // 拿到的JSON字符串长这样，没办法通过属性获取到值</span><br><span class="line"> var json = &#x27;&#123;&quot;username&quot;:&quot;James&quot;&#125;&#x27;;</span><br><span class="line"> // 所以要利用JSON的parse方法解析JSON字符串</span><br><span class="line"> json = JSON.parse(json);</span><br><span class="line"> console.log(json.username);</span><br><span class="line"> </span><br><span class="line"> // 如果是多组JSON操作，字符串编辑麻烦可以使用转换</span><br><span class="line"> var json = [</span><br><span class="line">     &#123; &quot;username&quot;: &quot;James&quot;, &quot;password&quot;: &#x27;123456&#x27; &#125;,</span><br><span class="line">     &#123; &quot;username&quot;: &quot;Hero&quot;, &quot;password&quot;: &#x27;111111&#x27; &#125;,</span><br><span class="line">     &#123; &quot;username&quot;: &quot;LISA&quot;, &quot;password&quot;: &#x27;666666&#x27; &#125;</span><br><span class="line"> ];</span><br><span class="line"> // 把引用类型的数据转换为JSON字符串</span><br><span class="line"> // stringify()方法和parse()方法，操作相反。</span><br><span class="line"> json = JSON.stringify(json); </span><br><span class="line"> json = JSON.parse(json);</span><br><span class="line"> console.log(json[2].username);</span><br></pre></td></tr></table></figure>
+
+<p>JSON数据发送请求演示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 使用JSON数据，请求传输数据</span><br><span class="line">    var xhr = new XMLHttpRequest();</span><br><span class="line">    xhr.onload = function()&#123;</span><br><span class="line">        if(xhr.status == 200)&#123;</span><br><span class="line">            // 1.输出查看，控制台返回的数据</span><br><span class="line">            // console.log(xhr.responseText);</span><br><span class="line"></span><br><span class="line">            // 2.根据数据获取数据</span><br><span class="line">            var data = JSON.parse(xhr.responseText);</span><br><span class="line">            console.log(data.list[0].username);</span><br><span class="line">            console.log(data.list[0].age);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    xhr.open(&#x27;GET&#x27;,&#x27;/list&#x27;,true);</span><br><span class="line">    xhr.send();</span><br></pre></td></tr></table></figure>
+
+<p>接口文档：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">router.get(&#x27;/list&#x27;, async (ctx, next)=&gt;&#123;</span><br><span class="line">  ctx.body = &quot;list Data&quot;;</span><br><span class="line"></span><br><span class="line">  // 接收get传输的数据</span><br><span class="line">  // 通过ctx下面有一个request对象的query</span><br><span class="line">  // console.log(ctx.request.query);</span><br><span class="line"></span><br><span class="line">  // 在koa框架中，只要使用&#123;&#125;就可以访问JSON格式数据了“koa自动进行了转换”</span><br><span class="line">  ctx.body = &#123;</span><br><span class="line">    errcode:0,</span><br><span class="line">    errmsg:&#x27;ok&#x27;,</span><br><span class="line">    list:[</span><br><span class="line">      &#123;&quot;username&quot;: &quot;James&quot;, &quot;age&quot;: &#x27;30&#x27;,gender:&#x27;男&#x27;&#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结：-2"><a href="#总结：-2" class="headerlink" title="总结："></a>总结：</h3><p>JSON：一种轻量级的数据交换格式，比XML要简单，灵活，高效。<br>JSON规范：双引号，类型限制，逗号<br>JSON方法：JSON.stringify( )   JSON.parse( )    前后端数据通信的便捷转换神器。</p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/06/01/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97/">
+                数据类型转换
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-06-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><ol>
+<li>string</li>
+<li>number</li>
+<li>boolean</li>
+<li>undefined</li>
+<li>null</li>
+</ol>
+<h1 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h1><h2 id="其他数据类型转number"><a href="#其他数据类型转number" class="headerlink" title="其他数据类型转number"></a>其他数据类型转number</h2><pre><code>|                | parseInt |parseFloat | number  |
+| -------------- | -------- | ----------|-------- |
+|&#39;1234&#39;--&gt;       |  1234    |  1234     |   1234  |
+|  &#39;abc&#39;--&gt;      |   NAN    |     NAN   |    NAN  |
+| &#39;123礼拜&#39;--&gt;   |    123   |     123   |     NAN |
+|     true--&gt;    |    NAN   |     NAN   |     1   |
+|      false     |    NAN   |      NAN  |     0   |
+|  undefined     |     NAN  |    NAN    |     NAN |
+|    NULL        |       NAN|      NAN  |       0 |
+</code></pre>
+<h2 id="其他数据类型转string"><a href="#其他数据类型转string" class="headerlink" title="其他数据类型转string"></a>其他数据类型转string</h2><p>所有的数据类型直接添加引号变成字符就行</p>
+<h2 id="其它数据类型转换成Boolean类型的六个假值"><a href="#其它数据类型转换成Boolean类型的六个假值" class="headerlink" title="其它数据类型转换成Boolean类型的六个假值"></a>其它数据类型转换成Boolean类型的六个假值</h2><ol>
+<li>空字符串  var a=””;</li>
+<li>var a=false;</li>
+<li>var a=0;</li>
+<li>var a=NAN;</li>
+<li>var a=undefined;</li>
+<li>var a=null;</li>
+</ol>
+<h1 id="各种数据类型之间的运算"><a href="#各种数据类型之间的运算" class="headerlink" title="各种数据类型之间的运算"></a>各种数据类型之间的运算</h1><ol>
+<li><p>数值类型和其他类型<br> 10+10=20<br> 10+”10”=20<br> 10+”abc”=10abc<br> 10-“abc”=NAN<br> 10+parseInt(“abc10”)=NAN<br> 10+parseInt(“10abc”)=20<br> 10+parseFloat(“abc10”)=NAN<br> 10+parseFloat(“10abc”)=20<br> 10+parseFloat(“10.1abc”)=20.1<br> 10+{}=10[object object]</p>
+<p> 10+true=11<br> 10+false=10<br> 10+undefined=NAN<br> 10+null=10</p>
+</li>
+<li><p>字符串和其他类型</p>
+</li>
+</ol>
+<p>字符串在前，数值在后的运算都是将后者转成字符串    “10”+10=1010<br>                                                “10”+{}=10[object object]<br>                                                “10”+”abc”=10abc<br>                                                “10”+true=10true<br>                                                “10”+undefined=10undefined<br>                                                “10”+null=10null<br>                                                null+”10”=null10</p>
+<ol start="3">
+<li>其他数值类型<br>true+true=2<br>false+true=1<br>undefined+true=NAN<br>true+undefined=NAN<br>true+null=1<br>undefined+null=NAN</li>
+</ol>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/06/01/%E6%AD%A3%E5%88%99/">
+                正则
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-06-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h2 id="1-什么是正则表达式？"><a href="#1-什么是正则表达式？" class="headerlink" title="1. 什么是正则表达式？"></a>1. 什么是正则表达式？</h2><p>正则表达式(Regular Expression)是一种文本模式，包括普通字符（如，a-z,A-Z,0-9等）和特殊字符（称为”元字符”，如：+,?,*等）。<br>正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。<br>正则表达式是繁琐的，但它是强大的，学会之后的应用会让你除了提高效率外，会给你带来绝对的成就感。<br>许多程序设计语言都支持利用正则表达式进行字符串操作。C#， java, PHP</p>
+<p>正则表达式使用场景：一般校验字符串是否满足正则表达式条件，如：登录校验，注册校验，验证邮箱，验证手机，验证密码强度等等。</p>
+<h2 id="2-JS中如何定义正则表达式？"><a href="#2-JS中如何定义正则表达式？" class="headerlink" title="2. JS中如何定义正则表达式？"></a>2. JS中如何定义正则表达式？</h2><p>两种方式：字面量和RegExp()对象<br>如：<br>var reg1 = /[0-9]/;     // 字面量定义方式，推荐使用<br>var reg2 = new RegExp(‘[0-9]’, ‘i’); </p>
+<p>RegExp对象及其API参考：<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp</a></p>
+<h2 id="3-正则表达式语法？（重点）"><a href="#3-正则表达式语法？（重点）" class="headerlink" title="3. 正则表达式语法？（重点）"></a>3. 正则表达式语法？（重点）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">[0-9]匹配0-9之间的单个数字，其中[]表示范围</span><br><span class="line">[a-z]匹配a-z之间的单个字母</span><br><span class="line">[A-Z]匹配A-Z之间的单个字母</span><br><span class="line">+ 匹配1个或多个字符（1次或多次）</span><br><span class="line">? 匹配0个或一个字符（0次、或1次）</span><br><span class="line">* 匹配0个或多个字符（0次、或1次、或多次）</span><br><span class="line">^ 匹配以xxx字符开头，特别注意在[]中使用时表示取反操作。</span><br><span class="line">$ 匹配以xxx字符结尾</span><br><span class="line">&#123;&#125; 表示匹配的字符串的长度范围 &#123;2, 6&#125;  相当:str.length &gt;= 2 &amp;&amp; str.length &lt;= 6</span><br><span class="line">() 表示一个整体.</span><br><span class="line">| 表示或者 or </span><br><span class="line"></span><br><span class="line">\s 匹配任何空白字符 &#x27;&#x27;，包括空格(按下空格键)、制表符、换页符等等。等价于 [\f\n\r\t\v]。</span><br><span class="line">\S 匹配任何非空白字符。等价于 [^\f\n\r\t\v]</span><br><span class="line">\w 匹配数字,字母,下划线</span><br><span class="line">\W 匹配非数字,非字母,非下划线</span><br><span class="line">\d	匹配一个数字字符。等价于 [0-9]。</span><br><span class="line">\D	匹配一个非数字字符。等价于 [^0-9]。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">以下的了解：</span><br><span class="line">\ 转义字符  如：\. </span><br><span class="line">\f 匹配一个换页符(了解)  PageDown下一页 PageUp上一页</span><br><span class="line">\n 匹配一个换行符 (软换行,自动换行,常用)</span><br><span class="line">\r 匹配一个回车符 (强换行,相当于按下enter键,常用)</span><br><span class="line">\t 匹配一个制表符。(了解,相当于按下tab键)</span><br><span class="line">\v 匹配一个垂直制表符。(了解)</span><br><span class="line">......</span><br><span class="line">各种语法可以组合使用。</span><br></pre></td></tr></table></figure>
+<p>详细语法参考文档：<br><a target="_blank" rel="noopener" href="https://www.runoob.com/regexp/regexp-syntax.html">https://www.runoob.com/regexp/regexp-syntax.html</a></p>
+<h2 id="4-正则表达式的三种模式？（了解）"><a href="#4-正则表达式的三种模式？（了解）" class="headerlink" title="4. 正则表达式的三种模式？（了解）"></a>4. 正则表达式的三种模式？（了解）</h2><p>贪婪模式  * 和 +、懒惰模式  ?、独占模式</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/study-everyday/p/7426862.html">https://www.cnblogs.com/study-everyday/p/7426862.html</a></p>
+<h2 id="5-常用的正则表达式"><a href="#5-常用的正则表达式" class="headerlink" title="5. 常用的正则表达式"></a>5. 常用的正则表达式</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ZYC88888/article/details/98479629">https://blog.csdn.net/ZYC88888/article/details/98479629</a><br><a target="_blank" rel="noopener" href="http://c.runoob.com/front-end/854">http://c.runoob.com/front-end/854</a></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/06/01/%E8%BF%9B%E7%A8%8B,%E7%BA%BF%E7%A8%8B,%E5%90%8C%E6%AD%A5,%E5%BC%82%E6%AD%A5/">
+                进程 线程 同步 异步
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-06-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="进程-线程-同步-异步"><a href="#进程-线程-同步-异步" class="headerlink" title="进程 线程 同步 异步"></a>进程 线程 同步 异步</h1><h2 id="1-进程与线程"><a href="#1-进程与线程" class="headerlink" title="1.进程与线程"></a>1.进程与线程</h2><ul>
+<li><p>进程是一个动态的过程，是一个活动的实体。简单来说一个应用程序的运算就可以被看做一个进程。</p>
+</li>
+<li><p>线程是运行中的实际的任务执行者，可以说进程中包含多个可以同时运行的线程。</p>
+</li>
+<li><p>JavaScript语言的一大特点就是<strong>单线程</strong>也就是说同一个时间只能做一件事。（为什么JS不能有多个线程？）</p>
+</li>
+<li><p>JavaScript的单线程，与它的用途有关系。作为浏览器的及脚本语言“JS主要作用是遇用户互动，操作DOM”，这就决定了它只能是单线程的，否则会带来很复杂的同步问题“例如:一个线程在有个DOM节点上添加内容，又在线程上删除这个节点，这时浏览器应该以哪个线程为准？”</p>
+</li>
+<li><p>为了利用多核UPU的计算能力，HTML提出Web Worker标准，允许JavaScript脚本创建多个线程，但是子线程完全受主线程的控制，且不得操作DOM。所以这个新标准并没有改变JavaScript单线程的本质。</p>
+</li>
+</ul>
+<h2 id="2-同步与异步"><a href="#2-同步与异步" class="headerlink" title="2.同步与异步"></a>2.同步与异步</h2><ul>
+<li>单线程就意味着，所有的任务需要排队，前一个任务结束才会执行下一个任务。如果前一个任务耗时很长，后一个任务就等着。</li>
+<li>如果排队是因为计算过大“CPU忙不过来”，就算了。但是很多时候CPU是闲着的，因为IO设备“输入输出设备”很慢“比如AJAX操作从网络读取数据”，不得不等着结果出来再往下执行。</li>
+<li>JavaScript语言的设计者意识到上面的问题，这时候就让主线程完全不管IO设备，把它挂起来“等待中的任务”，先运行后面排队的任务，等到IO设备返回了结果再回过头把挂起来的任务继续执行下去。</li>
+<li>所以，所有的任务可以分成两种，一种是同步任务(synchronous)，另一种是异步任务(Asynchronous)。</li>
+<li><strong>同步</strong>在主线程上排队执行的任务，只有前一个执行完毕，才能执行后一个任务。 按照顺序执行，阻塞的。</li>
+<li><strong>异步</strong>异步任务不进入主线程，而进入“任务队列(task queue)”的任务，只有“任务队列”通知主线程，某个异步任务可以执行了，这个任务才会进入主线程。</li>
+</ul>
+<h3 id="使用异步的场景"><a href="#使用异步的场景" class="headerlink" title="使用异步的场景"></a>使用异步的场景</h3><ol>
+<li>定时任务 ： setTimeout，setInterval</li>
+<li>网络请求 ： ajax请求，动态img添加</li>
+<li>事件绑定 ：点击等交互事件</li>
+</ol>
+<h2 id="3-任务队列"><a href="#3-任务队列" class="headerlink" title="3.任务队列"></a>3.任务队列</h2><h3 id="异步任务运行机制："><a href="#异步任务运行机制：" class="headerlink" title="异步任务运行机制："></a>异步任务运行机制：</h3><ol>
+<li>所有同步任务都在主线程上执行，形成一个执行线。</li>
+<li>主线程之外，还存在一个“任务队列”，只要异步操作执行完成，就到任务队列中排队。</li>
+<li>一旦执行栈中的所有同步任务执行完毕，系统就会按次序读取任务队列中的异步任务，于是被读取的异步任务结束等待状态，进入执行栈，开始执行。</li>
+<li>主线程不断重复上面的第三步。（主线程从任务队列中读取事件，这个过程是循环不断的，所以整个这种运行机制又称为Event Loop“事件循环”）。</li>
+</ol>
+<h2 id="4-事件和回调函数"><a href="#4-事件和回调函数" class="headerlink" title="4.事件和回调函数"></a>4.事件和回调函数</h2><ul>
+<li><strong>任务队列</strong>是一个事件的队列（也可以理解成消息的队列），IO设置完成一项任务就在任务队列中添加一个事件，表示相关的异步任务可以进入到“执行栈”中，主线程读取“任务队列”就是读取里面有哪儿些事件。</li>
+<li><strong>任务队列</strong>中的事件，除了IO设备的时间以外，还包括一些用户产生的事件(比如鼠标单击，页面滚动等)。只要制定过回调函数，这些事件发生时就会进入“任务队列”等待主线程读取。</li>
+<li><strong>回调函数</strong>（callback），就是那些会被主线程挂起来的代码，异步任务必须执行回调函数，当主线程开始执行异步任务，就是执行对应的回调函数。</li>
+<li><strong>任务队列</strong>是一个先进先出的数据结构，排在前面的事件，优先被主线程读取，主线程的读取过程基本上是自动的，只要执行栈已清空，“任务队列”的第一位的时间就自动进入主线程。但是，由于存在后文提到的“定时器”功能，主线程首先要先检查一下执行事件，某些事件只有到了规定的时间才能返回主线程。</li>
+</ul>
+<h2 id="5-Event-Loop"><a href="#5-Event-Loop" class="headerlink" title="5.Event Loop"></a>5.Event Loop</h2><ul>
+<li>主线程从“任务队列”中读取事件，这个过程是循环不断的，所以整个的这种运行机制称为Event Loop “事件循环”。</li>
+</ul>
+<h2 id="6-微任务，宏任务"><a href="#6-微任务，宏任务" class="headerlink" title="6.微任务，宏任务"></a>6.微任务，宏任务</h2><p>在事件中，没进行一次循环操作称为tick。分为宏任务(macrotask) 和微任务(microtask)  并且每次宏任务执行完毕，都要清空所有的微任务。</p>
+<h3 id="宏任务"><a href="#宏任务" class="headerlink" title="宏任务"></a>宏任务</h3><pre><code>setTimeout，setInterval， I/O 。UI交互事件
+</code></pre>
+<h3 id="微任务"><a href="#微任务" class="headerlink" title="微任务"></a>微任务</h3><pre><code>Promise等……
+</code></pre>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/04/01/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/">
+                原型与原型链
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-04-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="1-什么是原型？-什么是原型链？"><a href="#1-什么是原型？-什么是原型链？" class="headerlink" title="1. 什么是原型？ 什么是原型链？"></a>1. 什么是原型？ 什么是原型链？</h1><p>在js中万物皆对象，所以原型又称原型对象，每个对象都有一个__proto__属性，这个属性就是原型对象。<br>另外在js中的函数比较特殊，它有一个prototype属性，是函数的原型对象，称为函数原型。</p>
+<p>函数对象的原型：Person.prototype<br>普通对象的原型：obj.<strong>proto</strong></p>
+<p>原型链：一个对象，通过__proto__或者prototype可以找到它的原型对象，原型对象继续向上查找原型对象，一直到Object对象为至，这样的递归查找过程就是原型链(继承链)。</p>
+<h1 id="2-普通对象和函数对象？"><a href="#2-普通对象和函数对象？" class="headerlink" title="2. 普通对象和函数对象？"></a>2. 普通对象和函数对象？</h1><p>概括：<br>使用typeof判断类型时，返回function的都是函数对象，否则是普通对象。(特殊的是Object)<br>或者如下描述：<br>凡是通过 new Function() 创建的对象都是函数对象，其他的都是普通对象。</p>
+<h1 id="3-构造函数的原型对象和构造函数本身的关系？"><a href="#3-构造函数的原型对象和构造函数本身的关系？" class="headerlink" title="3. 构造函数的原型对象和构造函数本身的关系？"></a>3. 构造函数的原型对象和构造函数本身的关系？</h1><p>原型对象（Person.prototype）是 构造函数（Person）的一个实例。</p>
+<p>原型的构造函数属性（constructor）等于构造函数（Person）本身<br>Person.prototype.constructor = Person</p>
+<p>构造函数 &gt; 原型对象</p>
+<p>原型及原型链文档：<br><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1604426873229560999&amp;wfr=spider&amp;for=pc">https://baijiahao.baidu.com/s?id=1604426873229560999&amp;wfr=spider&amp;for=pc</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/dee9f8b14771">https://www.jianshu.com/p/dee9f8b14771</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35790971">https://zhuanlan.zhihu.com/p/35790971</a></p>
+
+        </div>
+    
+
+</div>
+            
+                
+<div class="post">
+
+    <div class="post-header index">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/04/01/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
+                构造函数
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-04-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    
+        <div class="content">
+            <h1 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h1><ul>
+<li>概念：用来构造一个实例函数。</li>
+<li>语法：1.函数名首字母大写<strong>function Person(){}<strong>。 2.使用new实例对象</strong>var pes = new Peerson();</strong></li>
+<li>使用方法：对象调属性的方式获取函数内数据。</li>
+<li>使用场景：JS内置对象不够用的时候。</li>
+</ul>
+<h1 id="继承父类构造函数内方法"><a href="#继承父类构造函数内方法" class="headerlink" title="继承父类构造函数内方法"></a>继承父类构造函数内方法</h1><ul>
+<li>注意：不能继承父类原型上方法</li>
+<li>作用：只能使用父类构造函数内方法 **”父类函数内方法改变，子类相同”**，不能使用父类原型上方法。</li>
+<li>语法：在子类函数内添加 <strong>父类.apply(this,[…………]);</strong> </li>
+<li>结果：子类拥有<strong>父类构造函数内方法</strong>及自己<strong>本身构造函数内方法</strong>。</li>
+</ul>
+<h1 id="继承父类原型方法"><a href="#继承父类原型方法" class="headerlink" title="继承父类原型方法"></a>继承父类原型方法</h1><ul>
+<li>注意：不能继承父类原构造函数内方法</li>
+<li>作用：只能使用父类原型上方法 **”父类原型方法改变，子类相同”**，不能使用父类构造函数内方法。</li>
+<li>语法：子类.prototype = Object.create(父类.prototype); //子类得到了父类原型上的方法</li>
+<li>语法：子类.prototype.constructor = 子类构造函数; //让子类的构造函数属性指向自己。</li>
+<li>结果：子类拥有<strong>父类原型上方法</strong>及自己<strong>本身构造函数内方法</strong> 和 <strong>自己原型上方法</strong>。</li>
+</ul>
+<h1 id="继承父类构造函数及原型方法"><a href="#继承父类构造函数及原型方法" class="headerlink" title="继承父类构造函数及原型方法"></a>继承父类构造函数及原型方法</h1><ul>
+<li>方法：上面两种方法合并使用。</li>
+<li>结果：子类可以使用<strong>自己构造函数内方法及父类构造函数内方法</strong> 和 <strong>自己原型上方法及父类原型上方法</strong></li>
+<li>注意：<strong>父类更新构造函数内和原型上方法子类同时更新</strong>，子类更新父类不受任何影响。</li>
+</ul>
 
         </div>
     
@@ -191,6 +939,19 @@
 </div>
 
 
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="wrap-pagination">
+                <a class="disabled" href="/lijinshuai_blog/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </a>
+                <a class="" href="/lijinshuai_blog/page/2/">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -215,7 +976,19 @@
         <ul>
             
             <li>
-                <a class="footer-post" href="/lijinshuai_blog/2023/02/20/hello-world/">Hello World</a>
+                <a class="footer-post" href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">this,this指向</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/09/01/webStorage/">webStorage存储数据</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/08/01/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">ES6新特性</a>
+            </li>
+            
+            <li>
+                <a class="footer-post" href="/lijinshuai_blog/2021/08/01/event/">event对象</a>
             </li>
             
         </ul>
@@ -224,13 +997,36 @@
 
 
             
+<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 footer-categories">
+    <h2>Categories</h2>
+    <ul>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/AJAX/">AJAX</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/Javascript/">Javascript</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/ES6/">ES6</a>
+        </li>
+        
+        <li>
+            <a class="footer-post" href="/lijinshuai_blog/categories/HHTTP/">HHTTP</a>
+        </li>
+        
+    </ul>
+</div>
+
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <ul class="list-inline footer-social-icons">
                     
                     <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-alpha-dust">
+                        <a target="_blank" rel="noopener" href="https://github.com/lijinshuai21">
                             <span class="footer-icon-container">
                                 <i class="fa fa-github"></i>
                             </span>
@@ -238,71 +1034,15 @@
                     </li>
                     
                     
-                    <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://twitter.com/?lang=en">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-twitter"></i>
-                            </span>
-                        </a>
-                    </li>
+                    
+                    
+                    
+                    
+                    
                     
                     
                     <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://www.facebook.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-facebook"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://www.instagram.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-instagram"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://dribbble.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-dribbble"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://telegram.org/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-telegram"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://www.behance.net/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-behance"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a target="_blank" rel="noopener" href="https://500px.com/">
-                            <span class="footer-icon-container">
-                                <i class="fa fa-500px"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="list-inline-item">
-                        <a href="mailto:test@example.com">
+                        <a href="mailto:3211384452@qq.com">
                             <span class="footer-icon-container">
                                 <i class="fa fa-envelope-o"></i>
                             </span>

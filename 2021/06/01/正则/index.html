@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="1. 什么是正则表达式？正则表达式(Regular Expression)是一种文本模式，包括普通字符（如，a-z,A-Z,0-9等）和特殊字符（称为”元字符”，如：+,?,*等）。正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。正则表达式是繁琐的，但它是强大的，学会之后的应用会">
+    
 
     <!--Author-->
     
@@ -18,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Welcome lijinshuai&#39;s Blog"/>
+        <meta property="og:title" content="正则"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +31,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -43,7 +45,7 @@
 
     <!-- Title -->
     
-    <title>归档 - Welcome lijinshuai&#39;s Blog</title>
+    <title>正则 - Welcome lijinshuai&#39;s Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
@@ -132,9 +134,7 @@
 <div class="container">
 
     <!-- Main Content -->
-    
-
-<div class="row">
+    <div class="row">
     <div class="col-sm-12">
 
         <!--Title and Logo-->
@@ -142,214 +142,68 @@
     <div class="logo">
         <a href="/lijinshuai_blog/"><i class="logo-icon fa fa-cube" aria-hidden="true"></i></a>
         
-            <h1 id="main-title" class="title">归档</h1>
-        
     </div>
 </header>
 
-        <section class="main archive-container">
+        <section class="main">
             
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/3-5%20%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E5%86%85%E5%AE%B9/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        网络，服务器，IP,请求
-    </a>
+<div class="post">
+
+    <div class="post-header">
+        <h1 class="title">
+            <a href="/lijinshuai_blog/2021/06/01/%E6%AD%A3%E5%88%99/">
+                正则
+            </a>
+        </h1>
+        <div class="post-info">
+            
+                <span class="date">2021-06-01</span>
+            
+            
+            
+                <span class="category">
+                    <a href="/lijinshuai_blog/categories/JavaScript/">JavaScript</a>
+                </span>
+            
+        </div>
+    </div>
+
+    <div class="content">
+
+        <!-- Gallery -->
+        
+
+        <!-- Post Content -->
+        <h2 id="1-什么是正则表达式？"><a href="#1-什么是正则表达式？" class="headerlink" title="1. 什么是正则表达式？"></a>1. 什么是正则表达式？</h2><p>正则表达式(Regular Expression)是一种文本模式，包括普通字符（如，a-z,A-Z,0-9等）和特殊字符（称为”元字符”，如：+,?,*等）。<br>正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。<br>正则表达式是繁琐的，但它是强大的，学会之后的应用会让你除了提高效率外，会给你带来绝对的成就感。<br>许多程序设计语言都支持利用正则表达式进行字符串操作。C#， java, PHP</p>
+<p>正则表达式使用场景：一般校验字符串是否满足正则表达式条件，如：登录校验，注册校验，验证邮箱，验证手机，验证密码强度等等。</p>
+<h2 id="2-JS中如何定义正则表达式？"><a href="#2-JS中如何定义正则表达式？" class="headerlink" title="2. JS中如何定义正则表达式？"></a>2. JS中如何定义正则表达式？</h2><p>两种方式：字面量和RegExp()对象<br>如：<br>var reg1 = /[0-9]/;     // 字面量定义方式，推荐使用<br>var reg2 = new RegExp(‘[0-9]’, ‘i’); </p>
+<p>RegExp对象及其API参考：<br><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp</a></p>
+<h2 id="3-正则表达式语法？（重点）"><a href="#3-正则表达式语法？（重点）" class="headerlink" title="3. 正则表达式语法？（重点）"></a>3. 正则表达式语法？（重点）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">[0-9]匹配0-9之间的单个数字，其中[]表示范围</span><br><span class="line">[a-z]匹配a-z之间的单个字母</span><br><span class="line">[A-Z]匹配A-Z之间的单个字母</span><br><span class="line">+ 匹配1个或多个字符（1次或多次）</span><br><span class="line">? 匹配0个或一个字符（0次、或1次）</span><br><span class="line">* 匹配0个或多个字符（0次、或1次、或多次）</span><br><span class="line">^ 匹配以xxx字符开头，特别注意在[]中使用时表示取反操作。</span><br><span class="line">$ 匹配以xxx字符结尾</span><br><span class="line">&#123;&#125; 表示匹配的字符串的长度范围 &#123;2, 6&#125;  相当:str.length &gt;= 2 &amp;&amp; str.length &lt;= 6</span><br><span class="line">() 表示一个整体.</span><br><span class="line">| 表示或者 or </span><br><span class="line"></span><br><span class="line">\s 匹配任何空白字符 &#x27;&#x27;，包括空格(按下空格键)、制表符、换页符等等。等价于 [\f\n\r\t\v]。</span><br><span class="line">\S 匹配任何非空白字符。等价于 [^\f\n\r\t\v]</span><br><span class="line">\w 匹配数字,字母,下划线</span><br><span class="line">\W 匹配非数字,非字母,非下划线</span><br><span class="line">\d	匹配一个数字字符。等价于 [0-9]。</span><br><span class="line">\D	匹配一个非数字字符。等价于 [^0-9]。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">以下的了解：</span><br><span class="line">\ 转义字符  如：\. </span><br><span class="line">\f 匹配一个换页符(了解)  PageDown下一页 PageUp上一页</span><br><span class="line">\n 匹配一个换行符 (软换行,自动换行,常用)</span><br><span class="line">\r 匹配一个回车符 (强换行,相当于按下enter键,常用)</span><br><span class="line">\t 匹配一个制表符。(了解,相当于按下tab键)</span><br><span class="line">\v 匹配一个垂直制表符。(了解)</span><br><span class="line">......</span><br><span class="line">各种语法可以组合使用。</span><br></pre></td></tr></table></figure>
+<p>详细语法参考文档：<br><a target="_blank" rel="noopener" href="https://www.runoob.com/regexp/regexp-syntax.html">https://www.runoob.com/regexp/regexp-syntax.html</a></p>
+<h2 id="4-正则表达式的三种模式？（了解）"><a href="#4-正则表达式的三种模式？（了解）" class="headerlink" title="4. 正则表达式的三种模式？（了解）"></a>4. 正则表达式的三种模式？（了解）</h2><p>贪婪模式  * 和 +、懒惰模式  ?、独占模式</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/study-everyday/p/7426862.html">https://www.cnblogs.com/study-everyday/p/7426862.html</a></p>
+<h2 id="5-常用的正则表达式"><a href="#5-常用的正则表达式" class="headerlink" title="5. 常用的正则表达式"></a>5. 常用的正则表达式</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ZYC88888/article/details/98479629">https://blog.csdn.net/ZYC88888/article/details/98479629</a><br><a target="_blank" rel="noopener" href="http://c.runoob.com/front-end/854">http://c.runoob.com/front-end/854</a></p>
+
+    </div>
+
+    
+
+    
+        <div class="post-tags">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <a href="/lijinshuai_blog/tags/JS/">#JS</a>
+        </div>
+    
+
+    <!-- Comments -->
+    
+
 </div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/Ajax/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        AJAX,GET,POST
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/Bom/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        BOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/DOM/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        DOM
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/07/01/cookie%E7%9A%84%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Jul 2020
-        </span>
-        Cookie内存
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/ES6%E6%96%B0%E7%89%B9%E6%80%A7/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        ES6新特性
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/08/01/event/">
-        <span class="archive-date">
-            Aug 2021
-        </span>
-        event对象
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/this%E6%8C%87%E5%90%91/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        this,this指向
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/02/01/js%E7%AE%80%E4%BB%8B/">
-        <span class="archive-date">
-            Feb 2021
-        </span>
-        JS发展史
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/09/01/webStorage/">
-        <span class="archive-date">
-            Sep 2021
-        </span>
-        webStorage存储数据
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        内存管理
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/06/01/%E4%B8%80%E6%AC%A1HTTP%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B/">
-        <span class="archive-date">
-            Jun 2020
-        </span>
-        HTTP请求响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E4%BD%9C%E7%94%A8%E5%9F%9F,%E4%B8%8A%E4%B8%8B%E6%96%87,%E9%97%AD%E5%8C%85,%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        作用域链、执行上下文、垃圾回收、闭包
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E5%8E%9F%E5%9E%8B%E5%8F%8A%E5%8E%9F%E5%9E%8B%E9%93%BE/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        原型与原型链
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E5%89%8D%E5%90%8E%E7%AB%AF%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        前后端响应
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/04/01/%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2/">
-        <span class="archive-date">
-            Apr 2020
-        </span>
-        响应式布局之媒体查询
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/04/01/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
-        <span class="archive-date">
-            Apr 2021
-        </span>
-        构造函数
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BF%90%E7%AE%97/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        数据类型转换
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E6%AD%A3%E5%88%99/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        正则
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2020/05/01/%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7/">
-        <span class="archive-date">
-            May 2020
-        </span>
-        运算符的优先级
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/06/01/%E8%BF%9B%E7%A8%8B,%E7%BA%BF%E7%A8%8B,%E5%90%8C%E6%AD%A5,%E5%BC%82%E6%AD%A5/">
-        <span class="archive-date">
-            Jun 2021
-        </span>
-        进程 线程 同步 异步
-    </a>
-</div>
-            
-                <div class="archive-post">
-    <a href="/lijinshuai_blog/2021/03/01/%E9%97%AD%E5%8C%85/">
-        <span class="archive-date">
-            Mar 2021
-        </span>
-        闭包
-    </a>
-</div>
-            
         </section>
+
     </div>
 </div>
+
 
 </div>
 
